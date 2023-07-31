@@ -1,0 +1,15 @@
+{
+    "actionOnStepFail": null, 
+    "blueprintName": "", 
+    "blueprintUuid": "4c3e96fb-691e-4578-b5e6-9b72781f150c", 
+    "cloneUrl": "", 
+    "enabled": true, 
+    "externalUuid4": "63a028a0-3f20-4be3-a29a-1deb9fde809b", 
+    "key": "createwindowsserver2019dvdkickstartisolink", 
+    "name": "Create Windows Server 2019 DVD Kickstart ISO (link)", 
+    "parameterMap": [], 
+    "projectName": "", 
+    "projectUuid": "24a458c3-5025-400b-bb49-4eae2055a149", 
+    "projectVersion": "", 
+    "type": "com.servertribe.attune.tuples.StepProjectLinkTuple"
+}
