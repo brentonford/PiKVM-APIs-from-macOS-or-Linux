@@ -57,6 +57,9 @@ This Project contains the following Blueprints.
 ### Kickstart Windows Server 2019 DVD on PiKVM with Single ISO
 
 
+### Kickstart Windows Server 2019 DVD on PiKVM with WinPE
+
+
 
 
 
@@ -65,6 +68,8 @@ This Project contains the following Blueprints.
 
 | Name | Type | Script Reference | Comment |
 | ---- | ---- | ---------------- | ------- |
+| Attune OS Build Server | Linux/Unix Node | `attuneosbuildserver` |  |
+| Linux: Attune User | Linux/Unix Credential | `linuxattuneuser` |  |
 
 
 
