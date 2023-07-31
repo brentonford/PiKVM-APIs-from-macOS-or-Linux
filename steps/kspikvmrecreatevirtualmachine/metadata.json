@@ -8,7 +8,35 @@
     "links": [
         {
             "order": 0, 
-            "stepKey": "testauthenticationtopikvm"
+            "stepKey": "pikvmtestauthentication"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "pikvmtestgetsysteminfo"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "pikvmgetatxstate"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "pikvmsetatxpowersoftoff"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "pikvmgetmsdstate"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "pikvmremovemsdimage"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "pikvmuploadmsdimage"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "pikvmsetatxpoweron"
         }
     ], 
     "name": "KS PiKVM Recreate Virtual Machine", 

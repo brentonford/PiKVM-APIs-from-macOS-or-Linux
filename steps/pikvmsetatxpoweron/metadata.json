@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "d9418ee9-c483-4d6a-9e56-3a84ee4adb99", 
+    "interpreter": 1, 
+    "key": "pikvmsetatxpoweron", 
+    "name": "PiKVM Set ATX Power On", 
+    "osCredKey": "linuxattuneuser", 
+    "serverKey": "attuneosbuildserver", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

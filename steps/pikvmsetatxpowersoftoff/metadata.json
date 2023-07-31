@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "0bf92255-5175-4dac-9f18-3adfcb52a62d", 
+    "interpreter": 1, 
+    "key": "pikvmsetatxpowersoftoff", 
+    "name": "PiKVM Set ATX Power Soft Off", 
+    "osCredKey": "linuxattuneuser", 
+    "serverKey": "attuneosbuildserver", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

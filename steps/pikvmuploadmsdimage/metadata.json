@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "7d3f4f7c-518c-4caa-b922-50f5f95a7dcf", 
+    "interpreter": 1, 
+    "key": "pikvmuploadmsdimage", 
+    "name": "PiKVM Upload MSD Image", 
+    "osCredKey": "linuxattuneuser", 
+    "serverKey": "attuneosbuildserver", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

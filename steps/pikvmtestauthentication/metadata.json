@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "c7ce05ae-be1f-4c92-bf25-69f68e2e4b4b", 
+    "interpreter": 1, 
+    "key": "pikvmtestauthentication", 
+    "name": "PiKVM Test Authentication", 
+    "osCredKey": "linuxattuneuser", 
+    "serverKey": "attuneosbuildserver", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

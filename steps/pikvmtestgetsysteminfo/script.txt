@@ -1,0 +1,16 @@
+CURL_OUTPUT=$(curl --insecure \
+    --header X-KVMD-User:{pikvmAdmin.user} \
+    --header X-KVMD-Passwd:{pikvmAdmin.password} \
+    https://{pikvmIpAddress}/api/info)
+    
+echo "${CURL_OUTPUT} | jq '.'
+
+OK=$(echo "${CURL_OUTPUT} | jq '.ok')
+
+if [ "${OK}" != "true" ]
+then
+    echo "Error"
+    exit 1
+fi
+
+    

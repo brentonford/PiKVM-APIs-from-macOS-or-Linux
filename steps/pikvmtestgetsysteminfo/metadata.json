@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "c7ce05ae-be1f-4c92-bf25-69f68e2e4b4b", 
+    "externalUuid4": "7a0f4218-c70e-42e2-8d15-c47fe145217c", 
     "interpreter": 1, 
-    "key": "testauthenticationtopikvm", 
-    "name": "Test Authentication to PiKVM", 
+    "key": "pikvmtestgetsysteminfo", 
+    "name": "PiKVM Test Get System Info", 
     "osCredKey": "linuxattuneuser", 
     "serverKey": "attuneosbuildserver", 
     "successExitCode": 0, 

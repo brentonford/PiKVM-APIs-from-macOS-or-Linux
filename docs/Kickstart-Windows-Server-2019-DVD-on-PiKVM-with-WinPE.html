@@ -254,8 +254,64 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#testauthenticationtopikvm">
-                            <strong>Step 6.1 -</strong> Test Authentication to PiKVM
+                        <a href="#pikvmtestauthentication">
+                            <strong>Step 6.1 -</strong> PiKVM Test Authentication
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#pikvmtestgetsysteminfo">
+                            <strong>Step 6.2 -</strong> PiKVM Test Get System Info
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#pikvmgetatxstate">
+                            <strong>Step 6.3 -</strong> PiKVM Get ATX State
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#pikvmsetatxpowersoftoff">
+                            <strong>Step 6.4 -</strong> PiKVM Set ATX Power Soft Off
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#pikvmgetmsdstate">
+                            <strong>Step 6.5 -</strong> PiKVM Get MSD State
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#pikvmremovemsdimage">
+                            <strong>Step 6.6 -</strong> PiKVM Remove MSD Image
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#pikvmuploadmsdimage">
+                            <strong>Step 6.7 -</strong> PiKVM Upload MSD Image
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#pikvmsetatxpoweron">
+                            <strong>Step 6.8 -</strong> PiKVM Set ATX Power On
                         </a>
                     </p>
 
@@ -500,9 +556,9 @@
 
 
                     <div class="row pt-5">
-                        <h4 id="testauthenticationtopikvm">
-                            <a href="#testauthenticationtopikvm">
-                                <strong>Step 6.1 -</strong> Test Authentication to PiKVM
+                        <h4 id="pikvmtestauthentication">
+                            <a href="#pikvmtestauthentication">
+                                <strong>Step 6.1 -</strong> PiKVM Test Authentication
                             </a>
                         </h4>
                     </div>
@@ -543,7 +599,390 @@ ssh {linuxattuneuser}@{attuneosbuildserver}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-#
+curl --insecure \
+    --header X-KVMD-User:{pikvmAdmin.user} \
+    --header X-KVMD-Passwd:{pikvmAdmin.password} \
+    https://{pikvmIpAddress}/api/auth/check \
+    | jq &#x27;.&#x27;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="pikvmtestgetsysteminfo">
+                            <a href="#pikvmtestgetsysteminfo">
+                                <strong>Step 6.2 -</strong> PiKVM Test Get System Info
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+CURL_OUTPUT=$(curl --insecure \
+    --header X-KVMD-User:{pikvmAdmin.user} \
+    --header X-KVMD-Passwd:{pikvmAdmin.password} \
+    https://{pikvmIpAddress}/api/info)
+    
+echo &quot;${CURL_OUTPUT} | jq &#x27;.&#x27;
+
+OK=$(echo &quot;${CURL_OUTPUT} | jq &#x27;.ok&#x27;)
+
+if [ &quot;${OK}&quot; != &quot;true&quot; ]
+then
+    echo &quot;Error&quot;
+    exit 1
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="pikvmgetatxstate">
+                            <a href="#pikvmgetatxstate">
+                                <strong>Step 6.3 -</strong> PiKVM Get ATX State
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+curl --insecure \
+    --header X-KVMD-User:{pikvmAdmin.user} \
+    --header X-KVMD-Passwd:{pikvmAdmin.password} \
+    https://{pikvmIpAddress}/api/atx)
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="pikvmsetatxpowersoftoff">
+                            <a href="#pikvmsetatxpowersoftoff">
+                                <strong>Step 6.4 -</strong> PiKVM Set ATX Power Soft Off
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+curl --insecure --verbose \
+    --request POST \
+    --data-binary @kickstart_{targetServer.fqn}.iso
+    --header X-KVMD-User:{pikvmAdmin.user} \
+    --header X-KVMD-Passwd:{pikvmAdmin.password} \
+    https://{pikvmIpAddress}/api/atx/power?action=off \
+    jq &#x27;.&#x27;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="pikvmgetmsdstate">
+                            <a href="#pikvmgetmsdstate">
+                                <strong>Step 6.5 -</strong> PiKVM Get MSD State
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+CURL_OUTPUT=$(curl --insecure \
+    --header X-KVMD-User:{pikvmAdmin.user} \
+    --header X-KVMD-Passwd:{pikvmAdmin.password} \
+    https://{pikvmIpAddress}/api/msd)
+    
+echo &quot;${CURL_OUTPUT} | jq &#x27;.&#x27;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="pikvmremovemsdimage">
+                            <a href="#pikvmremovemsdimage">
+                                <strong>Step 6.6 -</strong> PiKVM Remove MSD Image
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {ksAttuneBaseDir}
+
+curl --insecure --verbose \
+    --request POST \
+    --data-binary @kickstart_{targetServer.fqn}.iso
+    --header X-KVMD-User:{pikvmAdmin.user} \
+    --header X-KVMD-Passwd:{pikvmAdmin.password} \
+    https://{pikvmIpAddress}/api/msd/remove?image=kickstart_{targetServer.fqn}.iso
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="pikvmuploadmsdimage">
+                            <a href="#pikvmuploadmsdimage">
+                                <strong>Step 6.7 -</strong> PiKVM Upload MSD Image
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {ksAttuneBaseDir}
+
+curl --insecure --verbose \
+    --request POST \
+    --data-binary @kickstart_{targetServer.fqn}.iso
+    --header X-KVMD-User:{pikvmAdmin.user} \
+    --header X-KVMD-Passwd:{pikvmAdmin.password} \
+    https://{pikvmIpAddress}/api/msd/write?image=kickstart_{targetServer.fqn}.iso
+
+# Check if this is automatically created 
+# /var/lib/kvmd/msd/.__kickstart_{targetServer.fqn}.iso.complete
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="pikvmsetatxpoweron">
+                            <a href="#pikvmsetatxpoweron">
+                                <strong>Step 6.8 -</strong> PiKVM Set ATX Power On
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+curl --insecure --verbose \
+    --request POST \
+    --data-binary @kickstart_{targetServer.fqn}.iso
+    --header X-KVMD-User:{pikvmAdmin.user} \
+    --header X-KVMD-Passwd:{pikvmAdmin.password} \
+    https://{pikvmIpAddress}/api/atx/power?action=on \
+    jq &#x27;.&#x27;
                 </code>
             </pre>
         </div>

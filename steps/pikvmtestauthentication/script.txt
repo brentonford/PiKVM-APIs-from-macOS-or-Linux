@@ -1,0 +1,5 @@
+curl --insecure \
+    --header X-KVMD-User:{pikvmAdmin.user} \
+    --header X-KVMD-Passwd:{pikvmAdmin.password} \
+    https://{pikvmIpAddress}/api/auth/check \
+    | jq '.'

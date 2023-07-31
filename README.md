@@ -70,6 +70,8 @@ This Project contains the following Blueprints.
 | ---- | ---- | ---------------- | ------- |
 | Attune OS Build Server | Linux/Unix Node | `attuneosbuildserver` |  |
 | Linux: Attune User | Linux/Unix Credential | `linuxattuneuser` |  |
+| PiKVM Admin | Linux/Unix Credential | `pikvmadmin` |  |
+| PiKVM IP Address | Text | `pikvmipaddress` |  |
 
 
 
