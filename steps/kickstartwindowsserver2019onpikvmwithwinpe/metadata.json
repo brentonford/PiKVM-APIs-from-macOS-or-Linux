@@ -4,7 +4,7 @@
     "enabled": true, 
     "externalUuid4": "0e1f771e-3e7e-405e-a9c6-850ae1504b5b", 
     "isBlueprint": true, 
-    "key": "kickstartwindowsserver2019dvdonpikvmwithwinpe", 
+    "key": "kickstartwindowsserver2019onpikvmwithwinpe", 
     "links": [
         {
             "order": 0, 
@@ -35,6 +35,6 @@
             "stepKey": "kscleanbuildfileslink"
         }
     ], 
-    "name": "Kickstart Windows Server 2019 DVD on PiKVM with WinPE", 
+    "name": "Kickstart Windows Server 2019 on PiKVM with WinPE", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }

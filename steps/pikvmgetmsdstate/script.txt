@@ -3,4 +3,4 @@ CURL_OUTPUT=$(curl --insecure \
     --header X-KVMD-Passwd:{pikvmAdmin.password} \
     https://{pikvmIpAddress}/api/msd)
     
-echo "${CURL_OUTPUT} | jq '.'
+echo "${CURL_OUTPUT}" | jq '.'

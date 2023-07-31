@@ -57,7 +57,7 @@ This Project contains the following Blueprints.
 ### Kickstart Windows Server 2019 DVD on PiKVM with Single ISO
 
 
-### Kickstart Windows Server 2019 DVD on PiKVM with WinPE
+### Kickstart Windows Server 2019 on PiKVM with WinPE
 
 
 
@@ -72,6 +72,8 @@ This Project contains the following Blueprints.
 | Linux: Attune User | Linux/Unix Credential | `linuxattuneuser` |  |
 | PiKVM Admin | Linux/Unix Credential | `pikvmadmin` |  |
 | PiKVM IP Address | Text | `pikvmipaddress` |  |
+| KS: Attune Base Dir | Text | `ksattunebasedir` |  |
+| Target Server | Basic Node | `targetserver` |  |
 
 
 

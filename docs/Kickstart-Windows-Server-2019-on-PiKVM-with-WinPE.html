@@ -6,13 +6,13 @@
 
 
 <head>
-    <title>How to Kickstart Windows Server 2019 DVD on PiKVM with Single ISO - Attune Automation</title>
+    <title>How to Kickstart Windows Server 2019 on PiKVM with WinPE - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Kickstart Windows Server 2019 DVD on PiKVM with Single ISO - Attune Automation">
+          content="How to Kickstart Windows Server 2019 on PiKVM with WinPE - Attune Automation">
     <meta name="description"
           content="">
     <meta name="robots"
@@ -21,13 +21,13 @@
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Kickstart Windows Server 2019 DVD on PiKVM with Single ISO - Attune Automation" />
+          content="HowTo Kickstart Windows Server 2019 on PiKVM with WinPE - Attune Automation" />
     <meta property="og:description" content="" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Kickstart Windows Server 2019 DVD on PiKVM with Single ISO - Attune Automation" />
+          content="How to Kickstart Windows Server 2019 on PiKVM with WinPE - Attune Automation" />
     <meta name="twitter:description" content="" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
@@ -119,7 +119,7 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Kickstart Windows Server 2019 DVD on PiKVM with Single ISO</strong>
+                    <strong>Kickstart Windows Server 2019 on PiKVM with WinPE</strong>
                 </li>
             </ol>
         </nav>
@@ -133,7 +133,7 @@
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Kickstart Windows Server 2019 DVD on PiKVM with Single ISO
+                How to Kickstart Windows Server 2019 on PiKVM with WinPE
             </h1>
         </div>
     </div>
@@ -197,7 +197,7 @@
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Kickstart Windows Server 2019 DVD on PiKVM with Single ISO</strong>
+                            <strong>Kickstart Windows Server 2019 on PiKVM with WinPE</strong>
                         </a>
                     </p>
 
@@ -206,8 +206,40 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createwindowsserver2019dvdkickstartisolink">
-                            <strong>Step 1 -</strong> Create Windows Server 2019 DVD Kickstart ISO (link)
+                        <a href="#kscleanbuildfileslink">
+                            <strong>Step 1 -</strong> KS Clean Build Files (Link)
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deployplainwinpeisolink">
+                            <strong>Step 2 -</strong> Deploy Plain WinPE ISO  (Link)
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#ksdeploywindowsserverunattendedconfiglink">
+                            <strong>Step 3 -</strong> KS Deploy Windows Server Unattended Config (link)
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#modifywinpebootwimfor2019link">
+                            <strong>Step 4 -</strong> Modify WinPE boot.wim for 2019 (Link)
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#winpecreatebootisolink">
+                            <strong>Step 5 -</strong> WinPE Create Boot ISO (link)
                         </a>
                     </p>
 
@@ -215,7 +247,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#kspikvmrecreatevirtualmachine">
-                            <strong>Step 2 -</strong> KS PiKVM Recreate Virtual Machine
+                            <strong>Step 6 -</strong> KS PiKVM Recreate Virtual Machine
                         </a>
                     </p>
     
@@ -223,7 +255,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#pikvmtestauthentication">
-                            <strong>Step 2.1 -</strong> PiKVM Test Authentication
+                            <strong>Step 6.1 -</strong> PiKVM Test Authentication
                         </a>
                     </p>
 
@@ -231,7 +263,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#pikvmtestgetsysteminfo">
-                            <strong>Step 2.2 -</strong> PiKVM Test Get System Info
+                            <strong>Step 6.2 -</strong> PiKVM Test Get System Info
                         </a>
                     </p>
 
@@ -239,7 +271,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#pikvmgetatxstate">
-                            <strong>Step 2.3 -</strong> PiKVM Get ATX State
+                            <strong>Step 6.3 -</strong> PiKVM Get ATX State
                         </a>
                     </p>
 
@@ -247,7 +279,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#pikvmsetatxpowersoftoff">
-                            <strong>Step 2.4 -</strong> PiKVM Set ATX Power Soft Off
+                            <strong>Step 6.4 -</strong> PiKVM Set ATX Power Soft Off
                         </a>
                     </p>
 
@@ -255,7 +287,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#pikvmgetmsdstate">
-                            <strong>Step 2.5 -</strong> PiKVM Get MSD State
+                            <strong>Step 6.5 -</strong> PiKVM Get MSD State
                         </a>
                     </p>
 
@@ -263,7 +295,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#pikvmremovemsdimage">
-                            <strong>Step 2.6 -</strong> PiKVM Remove MSD Image
+                            <strong>Step 6.6 -</strong> PiKVM Remove MSD Image
                         </a>
                     </p>
 
@@ -271,7 +303,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#pikvmuploadmsdimage">
-                            <strong>Step 2.7 -</strong> PiKVM Upload MSD Image
+                            <strong>Step 6.7 -</strong> PiKVM Upload MSD Image
                         </a>
                     </p>
 
@@ -279,7 +311,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#pikvmsetatxpoweron">
-                            <strong>Step 2.8 -</strong> PiKVM Set ATX Power On
+                            <strong>Step 6.8 -</strong> PiKVM Set ATX Power On
                         </a>
                     </p>
 
@@ -288,7 +320,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#kscleanbuildfileslink">
-                            <strong>Step 3 -</strong> KS Clean Build Files (Link)
+                            <strong>Step 7 -</strong> KS Clean Build Files (Link)
                         </a>
                     </p>
 
@@ -351,7 +383,7 @@
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Kickstart Windows Server 2019 DVD on PiKVM with Single ISO</strong>
+                You've automated: <strong>Kickstart Windows Server 2019 on PiKVM with WinPE</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -382,9 +414,126 @@
 
 
                     <div class="row pt-5">
-                        <h3 id="createwindowsserver2019dvdkickstartisolink">
-                            <a href="#createwindowsserver2019dvdkickstartisolink">
-                                <strong>Step 1 -</strong> Create Windows Server 2019 DVD Kickstart ISO (link)
+                        <h3 id="kscleanbuildfileslink">
+                            <a href="#kscleanbuildfileslink">
+                                <strong>Step 1 -</strong> KS Clean Build Files (Link)
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Removes the directory <code>{ksVmwareAttuneBaseDir}/build-{targetServer.fqn}</code> and ISO file at <code>{ksVmwareAttuneBaseDir}/kickstart_{targetServer.fqn}.iso</code>. </p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+    
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="deployplainwinpeisolink">
+                            <a href="#deployplainwinpeisolink">
+                                <strong>Step 2 -</strong> Deploy Plain WinPE ISO  (Link)
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deploys Plain WinPE ISO.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+    
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="ksdeploywindowsserverunattendedconfiglink">
+                            <a href="#ksdeploywindowsserverunattendedconfiglink">
+                                <strong>Step 3 -</strong> KS Deploy Windows Server Unattended Config (link)
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deploys a <code>autounattend.xml</code> file compatible with Windows Server 2016, 2019 and 2022.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+    
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="modifywinpebootwimfor2019link">
+                            <a href="#modifywinpebootwimfor2019link">
+                                <strong>Step 4 -</strong> Modify WinPE boot.wim for 2019 (Link)
+                            </a>
+                        </h3>
+                    </div>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="winpecreatebootisolink">
+                            <a href="#winpecreatebootisolink">
+                                <strong>Step 5 -</strong> WinPE Create Boot ISO (link)
                             </a>
                         </h3>
                     </div>
@@ -408,7 +557,7 @@
                     <div class="row pt-5">
                         <h3 id="kspikvmrecreatevirtualmachine">
                             <a href="#kspikvmrecreatevirtualmachine">
-                                <strong>Step 2 -</strong> KS PiKVM Recreate Virtual Machine
+                                <strong>Step 6 -</strong> KS PiKVM Recreate Virtual Machine
                             </a>
                         </h3>
                     </div>
@@ -430,7 +579,7 @@
                     <div class="row pt-5">
                         <h4 id="pikvmtestauthentication">
                             <a href="#pikvmtestauthentication">
-                                <strong>Step 2.1 -</strong> PiKVM Test Authentication
+                                <strong>Step 6.1 -</strong> PiKVM Test Authentication
                             </a>
                         </h4>
                     </div>
@@ -501,7 +650,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="pikvmtestgetsysteminfo">
                             <a href="#pikvmtestgetsysteminfo">
-                                <strong>Step 2.2 -</strong> PiKVM Test Get System Info
+                                <strong>Step 6.2 -</strong> PiKVM Test Get System Info
                             </a>
                         </h4>
                     </div>
@@ -561,7 +710,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="pikvmgetatxstate">
                             <a href="#pikvmgetatxstate">
-                                <strong>Step 2.3 -</strong> PiKVM Get ATX State
+                                <strong>Step 6.3 -</strong> PiKVM Get ATX State
                             </a>
                         </h4>
                     </div>
@@ -611,7 +760,7 @@ curl --insecure \
                     <div class="row pt-5">
                         <h4 id="pikvmsetatxpowersoftoff">
                             <a href="#pikvmsetatxpowersoftoff">
-                                <strong>Step 2.4 -</strong> PiKVM Set ATX Power Soft Off
+                                <strong>Step 6.4 -</strong> PiKVM Set ATX Power Soft Off
                             </a>
                         </h4>
                     </div>
@@ -664,7 +813,7 @@ curl --insecure --verbose \
                     <div class="row pt-5">
                         <h4 id="pikvmgetmsdstate">
                             <a href="#pikvmgetmsdstate">
-                                <strong>Step 2.5 -</strong> PiKVM Get MSD State
+                                <strong>Step 6.5 -</strong> PiKVM Get MSD State
                             </a>
                         </h4>
                     </div>
@@ -716,7 +865,7 @@ echo &quot;${CURL_OUTPUT}&quot; | jq &#x27;.&#x27;
                     <div class="row pt-5">
                         <h4 id="pikvmremovemsdimage">
                             <a href="#pikvmremovemsdimage">
-                                <strong>Step 2.6 -</strong> PiKVM Remove MSD Image
+                                <strong>Step 6.6 -</strong> PiKVM Remove MSD Image
                             </a>
                         </h4>
                     </div>
@@ -770,7 +919,7 @@ curl --insecure --verbose \
                     <div class="row pt-5">
                         <h4 id="pikvmuploadmsdimage">
                             <a href="#pikvmuploadmsdimage">
-                                <strong>Step 2.7 -</strong> PiKVM Upload MSD Image
+                                <strong>Step 6.7 -</strong> PiKVM Upload MSD Image
                             </a>
                         </h4>
                     </div>
@@ -827,7 +976,7 @@ curl --insecure --verbose \
                     <div class="row pt-5">
                         <h4 id="pikvmsetatxpoweron">
                             <a href="#pikvmsetatxpoweron">
-                                <strong>Step 2.8 -</strong> PiKVM Set ATX Power On
+                                <strong>Step 6.8 -</strong> PiKVM Set ATX Power On
                             </a>
                         </h4>
                     </div>
@@ -881,7 +1030,7 @@ curl --insecure --verbose \
                     <div class="row pt-5">
                         <h3 id="kscleanbuildfileslink">
                             <a href="#kscleanbuildfileslink">
-                                <strong>Step 3 -</strong> KS Clean Build Files (Link)
+                                <strong>Step 7 -</strong> KS Clean Build Files (Link)
                             </a>
                         </h3>
                     </div>
