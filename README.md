@@ -69,10 +69,10 @@ This Project contains the following Blueprints.
 | Name | Type | Script Reference | Comment |
 | ---- | ---- | ---------------- | ------- |
 | Attune OS Build Server | Linux/Unix Node | `attuneosbuildserver` |  |
+| KS: Attune Base Dir | Text | `ksattunebasedir` |  |
 | Linux: Attune User | Linux/Unix Credential | `linuxattuneuser` |  |
 | PiKVM Admin | Linux/Unix Credential | `pikvmadmin` |  |
 | PiKVM IP Address | Text | `pikvmipaddress` |  |
-| KS: Attune Base Dir | Text | `ksattunebasedir` |  |
 | Target Server | Basic Node | `targetserver` |  |
 
 

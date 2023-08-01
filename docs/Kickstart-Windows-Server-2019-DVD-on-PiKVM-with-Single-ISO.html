@@ -278,8 +278,24 @@
         
 
                     <p class="text-muted pt-2">
+                        <a href="#pikvmselectisoimage">
+                            <strong>Step 2.8 -</strong> PiKVM Select ISO Image
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#pikvmconnectmsd">
+                            <strong>Step 2.9 -</strong> PiKVM Connect MSD
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#pikvmsetatxpoweron">
-                            <strong>Step 2.8 -</strong> PiKVM Set ATX Power On
+                            <strong>Step 2.10 -</strong> PiKVM Set ATX Power On
                         </a>
                     </p>
 
@@ -389,6 +405,13 @@
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -413,6 +436,13 @@
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -435,6 +465,13 @@
                         </h4>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -506,6 +543,13 @@ fi
                         </h4>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -566,6 +610,13 @@ fi
                         </h4>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -616,6 +667,13 @@ curl --insecure \
                         </h4>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -669,6 +727,13 @@ curl --insecure --verbose \
                         </h4>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -721,6 +786,13 @@ echo &quot;${CURL_OUTPUT}&quot; | jq &#x27;.&#x27;
                         </h4>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -775,6 +847,13 @@ curl --insecure --verbose \
                         </h4>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -825,13 +904,124 @@ curl --insecure --verbose \
 
 
                     <div class="row pt-5">
-                        <h4 id="pikvmsetatxpoweron">
-                            <a href="#pikvmsetatxpoweron">
-                                <strong>Step 2.8 -</strong> PiKVM Set ATX Power On
+                        <h4 id="pikvmselectisoimage">
+                            <a href="#pikvmselectisoimage">
+                                <strong>Step 2.8 -</strong> PiKVM Select ISO Image
                             </a>
                         </h4>
                     </div>
 
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+curl --insecure \
+    --request POST \
+    --header X-KVMD-User:{pikvmAdmin.user} \
+    --header X-KVMD-Passwd:{pikvmAdmin.password} \
+    &quot;https://{pikvmIpAddress}/api/msd/set_params?image=kickstart_{targetServer.fqn}.iso&amp;cdrom=1&quot; \
+    | jq &#x27;.&#x27;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="pikvmconnectmsd">
+                            <a href="#pikvmconnectmsd">
+                                <strong>Step 2.9 -</strong> PiKVM Connect MSD
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+curl --insecure --verbose \
+    --request POST \
+    --header X-KVMD-User:{pikvmAdmin.user} \
+    --header X-KVMD-Passwd:{pikvmAdmin.password} \
+    https://{pikvmIpAddress}/api/msd/set_connected?connected=1 \
+    | jq &#x27;.&#x27;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="pikvmsetatxpoweron">
+                            <a href="#pikvmsetatxpoweron">
+                                <strong>Step 2.10 -</strong> PiKVM Set ATX Power On
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 

@@ -36,6 +36,14 @@
         }, 
         {
             "order": 350, 
+            "stepKey": "pikvmselectisoimage"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "pikvmconnectmsd"
+        }, 
+        {
+            "order": 450, 
             "stepKey": "pikvmsetatxpoweron"
         }
     ], 
