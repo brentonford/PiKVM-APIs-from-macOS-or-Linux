@@ -1,0 +1,10 @@
+DIR="ks_pikvm_py_venv"
+
+if [ -d "${DIR}" ]
+then
+    echo "${DIR} already exists."
+else
+    mkdir "${DIR}"
+    cd "${DIR}"
+    python -m venv env
+fi

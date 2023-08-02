@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "1e576f80-cc19-4bca-aa5a-f7c6fc2b4442", 
+    "interpreter": 1, 
+    "key": "pikvmresetmsdstate", 
+    "name": "PiKVM Reset MSD State", 
+    "osCredKey": "linuxattuneuser", 
+    "serverKey": "attuneosbuildserver", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

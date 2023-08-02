@@ -1,6 +1,5 @@
-curl --insecure --verbose \
+curl --insecure \
     --request POST \
     --header X-KVMD-User:{pikvmAdmin.user} \
     --header X-KVMD-Passwd:{pikvmAdmin.password} \
-    https://{pikvmIpAddress}/api/atx/power?action=on \
-    | jq '.'
+    "https://{pikvmIpAddress}/api/msd/remove?image=kickstart_{targetServer.fqn}.iso"

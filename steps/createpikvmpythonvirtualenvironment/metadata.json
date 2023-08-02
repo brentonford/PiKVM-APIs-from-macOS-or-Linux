@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "22a97124-de96-4a5d-a18c-2f92a4d665d7", 
+    "interpreter": 1, 
+    "key": "createpikvmpythonvirtualenvironment", 
+    "name": "Create PiKVM Python Virtual Environment", 
+    "osCredKey": "linuxattuneuser", 
+    "serverKey": "attuneosbuildserver", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

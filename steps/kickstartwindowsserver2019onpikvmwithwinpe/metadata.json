@@ -11,27 +11,27 @@
             "stepKey": "kscleanbuildfileslink"
         }, 
         {
-            "order": 50, 
-            "stepKey": "deployplainwinpeisolink"
-        }, 
-        {
             "order": 100, 
-            "stepKey": "ksdeploywindowsserverunattendedconfiglink"
+            "stepKey": "deploynukwinpeisolink"
         }, 
         {
             "order": 150, 
-            "stepKey": "modifywinpebootwimfor2019link"
+            "stepKey": "ksdeploywindowsserverunattendedconfiglink"
         }, 
         {
             "order": 200, 
-            "stepKey": "winpecreatebootisolink"
+            "stepKey": "modifywinpebootwimfor2019link"
         }, 
         {
             "order": 250, 
-            "stepKey": "kspikvmrecreatevirtualmachine"
+            "stepKey": "winpecreatebootisolink"
         }, 
         {
             "order": 300, 
+            "stepKey": "kspikvmrecreatevirtualmachine"
+        }, 
+        {
+            "order": 350, 
             "stepKey": "kscleanbuildfileslink"
         }
     ], 

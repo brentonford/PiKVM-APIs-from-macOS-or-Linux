@@ -1,0 +1,12 @@
+for _ in $(seq 1 1 45)
+do
+
+    curl --insecure \
+        --request POST \
+        --header X-KVMD-User:{pikvmAdmin.user} \
+        --header X-KVMD-Passwd:{pikvmAdmin.password} \
+        "https://{pikvmIpAddress}/api/hid/events/send_key?key=End"
+        
+    sleep 1
+    
+done

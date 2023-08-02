@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "dddff8fa-dec4-48ed-acbe-85fc45429c1e", 
+    "interpreter": 1, 
+    "key": "redfishtoolshowsystemscollection", 
+    "name": "redfishtool Show Systems Collection", 
+    "osCredKey": "linuxattuneuser", 
+    "serverKey": "attuneosbuildserver", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "aa8742a6-6e67-46b1-b2ac-45df7d167c06", 
+    "interpreter": 1, 
+    "key": "pikvmremoveisoimage", 
+    "name": "PiKVM Remove ISO Image", 
+    "osCredKey": "linuxattuneuser", 
+    "serverKey": "attuneosbuildserver", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

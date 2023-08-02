@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "c7af2b48-6364-4398-98fa-bf425ec4107c", 
+    "interpreter": 1, 
+    "key": "pikvmsimulateesckeypress", 
+    "name": "PiKVM Simulate ESC Keypress", 
+    "osCredKey": "linuxattuneuser", 
+    "serverKey": "attuneosbuildserver", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

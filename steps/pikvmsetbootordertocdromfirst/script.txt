@@ -1,0 +1,14 @@
+DIR="ks_pikvm_py_venv"
+
+source "${DIR}/env/bin/activate"
+
+ID=$(redfishtool -S Never -r {pikvmIpAddress} root \
+    -p root \
+    Systems | jq ".Id")
+
+redfishtool about
+
+redfishtool -S Never -r {pikvmIpAddress} root -p root \
+    Systems -I "${ID}" setBootOverride Once CD
+
+deactivate

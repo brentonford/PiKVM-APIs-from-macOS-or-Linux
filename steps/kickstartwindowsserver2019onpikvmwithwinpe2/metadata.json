@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "67ed586d-9391-4574-9724-00caaefe8d27", 
+    "isBlueprint": true, 
+    "key": "kickstartwindowsserver2019onpikvmwithwinpe2", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "createbootablewinpeisowithnukdrivers"
+        }
+    ], 
+    "name": "Kickstart Windows Server 2019 on PiKVM with WinPE 2", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

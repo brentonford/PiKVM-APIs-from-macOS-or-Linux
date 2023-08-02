@@ -1,0 +1,13 @@
+DIR="ks_pikvm_py_venv"
+
+source "${DIR}/env/bin/activate"
+
+if pip list | grep -iq redfishtool
+then
+    echo "redfishtool is already installed."
+else
+    pip install redfishtool
+    pip list
+fi
+
+deactivate

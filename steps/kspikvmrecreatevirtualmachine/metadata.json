@@ -28,23 +28,47 @@
         }, 
         {
             "order": 250, 
-            "stepKey": "pikvmremovemsdimage"
+            "stepKey": "pikvmdisconnectmsd"
         }, 
         {
             "order": 300, 
-            "stepKey": "pikvmuploadmsdimage"
+            "stepKey": "pikvmresetmsdstate"
         }, 
         {
             "order": 350, 
-            "stepKey": "pikvmselectisoimage"
+            "stepKey": "pikvmremovemsdimage"
         }, 
         {
             "order": 400, 
-            "stepKey": "pikvmconnectmsd"
+            "stepKey": "pikvmuploadmsdimage"
         }, 
         {
             "order": 450, 
+            "stepKey": "pikvmselectisoimage"
+        }, 
+        {
+            "order": 500, 
+            "stepKey": "pikvmconnectmsd"
+        }, 
+        {
+            "order": 550, 
             "stepKey": "pikvmsetatxpoweron"
+        }, 
+        {
+            "order": 600, 
+            "stepKey": "pikvmsimulateesckeypress"
+        }, 
+        {
+            "order": 650, 
+            "stepKey": "kswinwinrmhttpswait120s"
+        }, 
+        {
+            "order": 700, 
+            "stepKey": "pikvmdisconnectmsd"
+        }, 
+        {
+            "order": 750, 
+            "stepKey": "pikvmremoveisoimage"
         }
     ], 
     "name": "KS PiKVM Recreate Virtual Machine", 

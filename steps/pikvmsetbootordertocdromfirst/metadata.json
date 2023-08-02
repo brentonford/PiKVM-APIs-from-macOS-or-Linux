@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "cc42eefb-a142-4a0b-9c16-323a8902cf52", 
+    "interpreter": 1, 
+    "key": "pikvmsetbootordertocdromfirst", 
+    "name": "PiKVM Set Boot Order to CDROM First", 
+    "osCredKey": "linuxattuneuser", 
+    "serverKey": "attuneosbuildserver", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
