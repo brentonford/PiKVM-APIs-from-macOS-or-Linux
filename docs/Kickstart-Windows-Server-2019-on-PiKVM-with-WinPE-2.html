@@ -318,8 +318,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#pikvmsimulateesckeypress">
-                            <strong>Step 2.13 -</strong> PiKVM Simulate ESC Keypress
+                        <a href="#pikvmsimulateendkeypress">
+                            <strong>Step 2.13 -</strong> PiKVM Simulate End Keypress
                         </a>
                     </p>
 
@@ -1052,7 +1052,7 @@ curl --insecure --verbose \
                 <code class="language-sql py-0">
 cd {ksAttuneBaseDir}
 
-curl --insecure --verbose \
+curl --insecure \
     --request POST \
     --data-binary @kickstart_{targetServer.fqn}.iso \
     --header X-KVMD-User:{pikvmAdmin.user} \
@@ -1252,9 +1252,9 @@ curl --insecure --verbose \
 
 
                     <div class="row pt-5">
-                        <h4 id="pikvmsimulateesckeypress">
-                            <a href="#pikvmsimulateesckeypress">
-                                <strong>Step 2.13 -</strong> PiKVM Simulate ESC Keypress
+                        <h4 id="pikvmsimulateendkeypress">
+                            <a href="#pikvmsimulateendkeypress">
+                                <strong>Step 2.13 -</strong> PiKVM Simulate End Keypress
                             </a>
                         </h4>
                     </div>

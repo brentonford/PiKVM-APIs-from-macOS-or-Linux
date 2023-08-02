@@ -1,6 +1,6 @@
 cd {ksAttuneBaseDir}
 
-curl --insecure --verbose \
+curl --insecure \
     --request POST \
     --data-binary @kickstart_{targetServer.fqn}.iso \
     --header X-KVMD-User:{pikvmAdmin.user} \
