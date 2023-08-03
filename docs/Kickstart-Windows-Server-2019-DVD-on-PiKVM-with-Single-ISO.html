@@ -318,16 +318,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#pikvmsimulateendkeypress">
-                            <strong>Step 2.13 -</strong> PiKVM Simulate End Keypress
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#kswinwinrmhttpswait120s">
-                            <strong>Step 2.14 -</strong> KS Win WinRM HTTPS Wait 120s
+                            <strong>Step 2.13 -</strong> KS Win WinRM HTTPS Wait 120s
                         </a>
                     </p>
 
@@ -335,7 +327,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#pikvmdisconnectmsd">
-                            <strong>Step 2.15 -</strong> PiKVM Disconnect MSD
+                            <strong>Step 2.14 -</strong> PiKVM Disconnect MSD
                         </a>
                     </p>
 
@@ -343,7 +335,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#pikvmremoveisoimage">
-                            <strong>Step 2.16 -</strong> PiKVM Remove ISO Image
+                            <strong>Step 2.15 -</strong> PiKVM Remove ISO Image
                         </a>
                     </p>
 
@@ -1260,74 +1252,9 @@ curl --insecure --verbose \
 
 
                     <div class="row pt-5">
-                        <h4 id="pikvmsimulateendkeypress">
-                            <a href="#pikvmsimulateendkeypress">
-                                <strong>Step 2.13 -</strong> PiKVM Simulate End Keypress
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-for _ in $(seq 1 1 45)
-do
-
-    curl --insecure \
-        --request POST \
-        --header X-KVMD-User:{pikvmAdmin.user} \
-        --header X-KVMD-Passwd:{pikvmAdmin.password} \
-        &quot;https://{pikvmIpAddress}/api/hid/events/send_key?key=End&quot;
-        
-    sleep 1
-    
-done
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
                         <h4 id="kswinwinrmhttpswait120s">
                             <a href="#kswinwinrmhttpswait120s">
-                                <strong>Step 2.14 -</strong> KS Win WinRM HTTPS Wait 120s
+                                <strong>Step 2.13 -</strong> KS Win WinRM HTTPS Wait 120s
                             </a>
                         </h4>
                     </div>
@@ -1373,7 +1300,7 @@ done
                     <div class="row pt-5">
                         <h4 id="pikvmdisconnectmsd">
                             <a href="#pikvmdisconnectmsd">
-                                <strong>Step 2.15 -</strong> PiKVM Disconnect MSD
+                                <strong>Step 2.14 -</strong> PiKVM Disconnect MSD
                             </a>
                         </h4>
                     </div>
@@ -1443,7 +1370,7 @@ curl --insecure --verbose \
                     <div class="row pt-5">
                         <h4 id="pikvmremoveisoimage">
                             <a href="#pikvmremoveisoimage">
-                                <strong>Step 2.16 -</strong> PiKVM Remove ISO Image
+                                <strong>Step 2.15 -</strong> PiKVM Remove ISO Image
                             </a>
                         </h4>
                     </div>

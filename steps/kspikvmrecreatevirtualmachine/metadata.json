@@ -55,10 +55,6 @@
             "stepKey": "pikvmsetatxpoweron"
         }, 
         {
-            "order": 600, 
-            "stepKey": "pikvmsimulateendkeypress"
-        }, 
-        {
             "order": 650, 
             "stepKey": "kswinwinrmhttpswait120s"
         }, 
