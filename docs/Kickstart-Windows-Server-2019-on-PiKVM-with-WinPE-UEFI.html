@@ -318,8 +318,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#kswinwinrmhttpswait120s">
-                            <strong>Step 2.13 -</strong> KS Win WinRM HTTPS Wait 120s
+                        <a href="#pikvmwaitforwininstall">
+                            <strong>Step 2.13 -</strong> PiKVM Wait for Win Install
                         </a>
                     </p>
 
@@ -336,6 +336,30 @@
                     <p class="text-muted pt-2">
                         <a href="#pikvmremoveisoimage">
                             <strong>Step 2.15 -</strong> PiKVM Remove ISO Image
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#kswinwinrmhttps">
+                            <strong>Step 2.16 -</strong> KS Win WinRM HTTPS
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#kswinwinrmhttpswaitfordownup">
+                            <strong>Step 2.17 -</strong> KS Win WinRM HTTPS Wait for down/up
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#pikvmwaitforwindowsstartup">
+                            <strong>Step 2.18 -</strong> PiKVM Wait for Windows Startup
                         </a>
                     </p>
 
@@ -1244,9 +1268,9 @@ curl --insecure --verbose \
 
 
                     <div class="row pt-5">
-                        <h4 id="kswinwinrmhttpswait120s">
-                            <a href="#kswinwinrmhttpswait120s">
-                                <strong>Step 2.13 -</strong> KS Win WinRM HTTPS Wait 120s
+                        <h4 id="pikvmwaitforwininstall">
+                            <a href="#pikvmwaitforwininstall">
+                                <strong>Step 2.13 -</strong> PiKVM Wait for Win Install
                             </a>
                         </h4>
                     </div>
@@ -1267,18 +1291,60 @@ curl --insecure --verbose \
 
 
 
-
+    
 
 
     
 
+
+
     <div class="row">
-        <p class="mb-0">
-            Check if TCP Port <strong>0</strong> is listening.
-            When the TCP Port is up, wait <strong>120</strong>
-            seconds.
+        <p>
+            Execute the following script:
         </p>
-        <p>Use Telnet to check if the TCP Service is accepting connections.</p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+function numLock() {
+    curl --insecure  \
+        --request GET \
+        --header X-KVMD-User:{pikvmAdmin.user} \
+        --header X-KVMD-Passwd:{pikvmAdmin.password} \
+        &quot;https://{pikvmIpAddress}/api/hid&quot; 2&gt; /dev/null \
+        | jq &#x27;.result.keyboard.leds.num&#x27;
+
+}
+
+echo &quot;Numlock is $(numLock)&quot;
+
+while [ &quot;$(numLock)&quot; = &#x27;false&#x27; ]
+do
+    echo &quot;Waiting for PowerOn&quot;
+    sleep 1
+done
+
+echo &quot;Numlock is $(numLock)&quot;
+
+while [ &quot;$(numLock)&quot; = &#x27;true&#x27; ]
+do
+    echo &quot;Waiting for WinPE to turn off numlock&quot;
+    sleep 5
+done
+
+echo &quot;Numlock is $(numLock)&quot;
+
+while [ &quot;$(numLock)&quot; = &#x27;false&#x27; ]
+do
+    echo &quot;Waiting reboot to turn numlock back on again&quot;
+    sleep 2
+done
+
+echo &quot;Numlock is $(numLock)&quot;
+                </code>
+            </pre>
+        </div>
     </div>
 
 
@@ -1313,18 +1379,7 @@ curl --insecure --verbose \
 
 
 
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {linuxattuneuser}@{attuneosbuildserver}
-                            </code>
-                        </div>
-
+    
 
 
     
@@ -1404,6 +1459,192 @@ curl --insecure \
     --header X-KVMD-User:{pikvmAdmin.user} \
     --header X-KVMD-Passwd:{pikvmAdmin.password} \
     &quot;https://{pikvmIpAddress}/api/msd/remove?image=kickstart_{targetServer.fqn}.iso&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="kswinwinrmhttps">
+                            <a href="#kswinwinrmhttps">
+                                <strong>Step 2.16 -</strong> KS Win WinRM HTTPS
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <div class="row">
+        <p class="mb-0">
+            Check if TCP Port <strong>0</strong> is listening.
+        </p>
+        <p>Use Telnet to check if the TCP Service is accepting connections.</p>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="kswinwinrmhttpswaitfordownup">
+                            <a href="#kswinwinrmhttpswaitfordownup">
+                                <strong>Step 2.17 -</strong> KS Win WinRM HTTPS Wait for down/up
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    <div class="row">
+        <p class="mb-0">
+            Check if TCP Port <strong>0</strong> is listening.
+            Make sure the TCP Port goes down for
+            <strong>1</strong> seconds.
+            When the TCP Port is up, wait <strong>5</strong>
+            seconds.
+        </p>
+        <p>Use Telnet to check if the TCP Service is accepting connections.</p>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="pikvmwaitforwindowsstartup">
+                            <a href="#pikvmwaitforwindowsstartup">
+                                <strong>Step 2.18 -</strong> PiKVM Wait for Windows Startup
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Wait until the load average is less than 15,
+or 2 minutes have passed.</p>
+<p>This is a quicker aproach than the "wait 2 minutes" ping step.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via RDP:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+mstsc /admin /v:{targetserverwin}
+                            </code>
+                        </div>
+                        <div class="row">
+                            <p>
+                                Login as user {winrmuser} and open a
+                                command prompt.
+                            </p>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$Start = Get-Date
+$count=0
+
+do {
+    $pct=$(Get-WmiObject win32_processor | select LoadPercentage).LoadPercentage;
+    Write-Host &quot;LoadPercentage: $pct, Count: $count&quot;;
+    if ($pct -lt 15) {
+        $count += 1;
+    } else {
+        $count=0
+    }
+    
+    if ( $count -ge 10 ) {
+        Write-Host &quot;Wait completed, we were idle for 10 seconds&quot;;
+        break;
+    }
+    
+    if ( ( Get-Date ) -gt $Start.AddMinutes(2) ) {
+        Write-Host &quot;Wait timed out, we waited two minutes&quot;;
+        break;
+    }
+    
+} until ($false);
                 </code>
             </pre>
         </div>

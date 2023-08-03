@@ -1,0 +1,36 @@
+
+function numLock() {
+    curl --insecure  \
+        --request GET \
+        --header X-KVMD-User:{pikvmAdmin.user} \
+        --header X-KVMD-Passwd:{pikvmAdmin.password} \
+        "https://{pikvmIpAddress}/api/hid" 2> /dev/null \
+        | jq '.result.keyboard.leds.num'
+
+}
+
+echo "Numlock is $(numLock)"
+
+while [ "$(numLock)" = 'false' ]
+do
+    echo "Waiting for PowerOn"
+    sleep 1
+done
+
+echo "Numlock is $(numLock)"
+
+while [ "$(numLock)" = 'true' ]
+do
+    echo "Waiting for WinPE to turn off numlock"
+    sleep 5
+done
+
+echo "Numlock is $(numLock)"
+
+while [ "$(numLock)" = 'false' ]
+do
+    echo "Waiting reboot to turn numlock back on again"
+    sleep 2
+done
+
+echo "Numlock is $(numLock)"

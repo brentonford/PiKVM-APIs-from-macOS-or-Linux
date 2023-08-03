@@ -55,16 +55,28 @@
             "stepKey": "pikvmsetatxpoweron"
         }, 
         {
-            "order": 650, 
-            "stepKey": "kswinwinrmhttpswait120s"
+            "order": 600, 
+            "stepKey": "pikvmwaitforwininstall"
         }, 
         {
-            "order": 700, 
+            "order": 650, 
             "stepKey": "pikvmdisconnectmsd"
         }, 
         {
-            "order": 750, 
+            "order": 700, 
             "stepKey": "pikvmremoveisoimage"
+        }, 
+        {
+            "order": 800, 
+            "stepKey": "kswinwinrmhttps"
+        }, 
+        {
+            "order": 850, 
+            "stepKey": "kswinwinrmhttpswaitfordownup"
+        }, 
+        {
+            "order": 900, 
+            "stepKey": "pikvmwaitforwindowsstartup"
         }
     ], 
     "name": "KS PiKVM Recreate Virtual Machine", 

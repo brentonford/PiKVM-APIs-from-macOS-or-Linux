@@ -54,16 +54,13 @@ This Project contains the following Blueprints.
 
 
 
-### Kickstart Windows Server 2019 DVD on PiKVM with Single ISO
-
-
-### Kickstart Windows Server 2019 on PiKVM with WinPE
-
-
-### PiKVM Set Boot Order
+### Kickstart Windows Server 2019 on PiKVM with WinPE - DELETE
 
 
 ### Kickstart Windows Server 2019 on PiKVM with WinPE UEFI
+
+
+### PiKVM Set Boot Order
 
 
 
@@ -81,6 +78,7 @@ This Project contains the following Blueprints.
 | PiKVM IP Address | Text | `pikvmipaddress` |  |
 | Target Server | Basic Node | `targetserver` |  |
 | Target Server: Win | Windows Node | `targetserverwin` |  |
+| WinRM User | Windows Credential | `winrmuser` |  |
 
 
 
