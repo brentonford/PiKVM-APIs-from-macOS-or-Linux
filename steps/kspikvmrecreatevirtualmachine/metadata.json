@@ -3,7 +3,7 @@
     "concurrency": 1, 
     "enabled": true, 
     "externalUuid4": "d6b8a610-e6ba-43ab-acd5-fe1a83412c6d", 
-    "isBlueprint": false, 
+    "isBlueprint": true, 
     "key": "kspikvmrecreatevirtualmachine", 
     "links": [
         {

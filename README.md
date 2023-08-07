@@ -54,10 +54,7 @@ This Project contains the following Blueprints.
 
 
 
-### Kickstart Windows Server 2019 on PiKVM with WinPE - DELETE
-
-
-### Kickstart Windows Server 2019 on PiKVM with WinPE UEFI
+### KS PiKVM Recreate Virtual Machine
 
 
 ### PiKVM Set Boot Order
