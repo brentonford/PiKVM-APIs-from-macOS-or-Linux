@@ -1,7 +1,7 @@
 {
     "externalUuid4": "a37cfc74-69e0-4817-a831-858c351d159f", 
-    "key": "linuxattuneuser", 
-    "name": "Linux: Attune User", 
+    "key": "kickstartworkerlinuxuser", 
+    "name": "Kickstart Worker Linux User", 
     "showInPlan": true, 
     "type": "c.s.s.b.phv.LinOsCred"
 }

@@ -1,5 +1,5 @@
 curl --insecure --verbose \
     --request POST \
-    --header X-KVMD-User:{pikvmAdmin.user} \
-    --header X-KVMD-Passwd:{pikvmAdmin.password} \
-    https://{pikvmIpAddress}/api/msd/remove?image=kickstart_{targetServer.fqn}.iso
+    --header X-KVMD-User:{pikvmUserAdmin.user} \
+    --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
+    https://{pikvmIpAddress}/api/msd/remove?image=kickstart_{kickstartedNode.fqn}.iso

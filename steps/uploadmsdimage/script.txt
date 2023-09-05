@@ -1,11 +1,11 @@
-cd {ksAttuneBaseDir}
+cd {kickstartWorkerBaseDir}
 
 curl --insecure \
     --request POST \
     --data-binary @kickstart_{targetServer.fqn}.iso \
-    --header X-KVMD-User:{pikvmAdmin.user} \
-    --header X-KVMD-Passwd:{pikvmAdmin.password} \
-    https://{pikvmIpAddress}/api/msd/write?image=kickstart_{targetServer.fqn}.iso
+    --header X-KVMD-User:{pikvmUserAdmin.user} \
+    --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
+    https://{pikvmIpAddress}/api/msd/write?image=kickstart_{kickstartedNode.fqn}.iso
 
 # Check if this is automatically created 
 # /var/lib/kvmd/msd/.__kickstart_{targetServer.fqn}.iso.complete

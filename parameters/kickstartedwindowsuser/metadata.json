@@ -1,7 +1,7 @@
 {
     "externalUuid4": "8b8ea927-e84c-4129-9123-c32a061dcc26", 
-    "key": "winrmuser", 
-    "name": "WinRM User", 
+    "key": "kickstartedwindowsuser", 
+    "name": "Kickstarted Windows User", 
     "showInPlan": true, 
     "type": "c.s.s.b.phv.WinOsCred"
 }

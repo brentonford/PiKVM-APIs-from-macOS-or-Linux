@@ -7,7 +7,7 @@
     "name": "WinRM HTTPS Wait for down/up", 
     "postWait": 5, 
     "preWait": 0, 
-    "serverKey": "targetserverwin", 
+    "serverKey": "kickstartedwindowsnode", 
     "tcpPort": 5986, 
     "type": "com.servertribe.attune.tuples.StepTcpPingTuple"
 }

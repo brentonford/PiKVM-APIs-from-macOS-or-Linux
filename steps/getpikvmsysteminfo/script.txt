@@ -1,6 +1,6 @@
 CURL_OUTPUT=$(curl --insecure \
-    --header X-KVMD-User:{pikvmAdmin.user} \
-    --header X-KVMD-Passwd:{pikvmAdmin.password} \
+    --header X-KVMD-User:{pikvmUserAdmin.user} \
+    --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
     https://{pikvmIpAddress}/api/info)
     
 echo "${CURL_OUTPUT}" | jq '.'

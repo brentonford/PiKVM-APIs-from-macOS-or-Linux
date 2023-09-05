@@ -2,9 +2,9 @@
     "actionOnStepFail": "stop", 
     "concurrency": 1, 
     "enabled": true, 
-    "externalUuid4": "2aab50f4-0e29-48ef-b8bb-eddea0bf1509", 
+    "externalUuid4": "7535da2b-7747-4b24-b8bb-69d3936b6736", 
     "isBlueprint": true, 
-    "key": "buildlinuxmachine", 
+    "key": "buildwindowsmachinewithpikvm", 
     "links": [
         {
             "order": 0, 
@@ -12,9 +12,9 @@
         }, 
         {
             "order": 50, 
-            "stepKey": "waitforlinuxstartup"
+            "stepKey": "waitforwindowsstartup"
         }
     ], 
-    "name": "Build Linux Machine", 
+    "name": "Build Windows Machine with PiKVM", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
