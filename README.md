@@ -74,11 +74,11 @@ This Project contains the following Blueprints.
 | Kickstart Worker Linux User | Linux/Unix Credential | `kickstartworkerlinuxuser` | The user on a linux device used to connect to another device or perform tasks. This could be the device that Attune is running on. |
 | PiKVM User: Admin | Linux/Unix Credential | `pikvmuseradmin` | The PiKVM Admin user. |
 | Kickstarted Node | Basic Node | `kickstartednode` | The node being kickstarted. |
-| Kickstart Worker Base Dir | Text | `kickstartworkerbasedir` | Directory for storing kickstart files, eg: "~/kickstart". |
 | PiKVM IP Address | Text | `pikvmipaddress` | The IP Address of the PiKVM. |
 | Kickstarted Windows Node | Windows Node | `kickstartedwindowsnode` | The node being kickstarted. This parameter is for Windows specific Steps. |
 | Kickstart Worker Linux Node | Linux/Unix Node | `kickstartworkerlinuxnode` | A linux device used to connect to another device or perform tasks. This could be the device that Attune is running on. |
 | Kickstarted Windows User | Windows Credential | `kickstartedwindowsuser` | The user for the node being kickstarted. This parameter is for Windows specific Steps. |
+| Kickstart Worker Base Dir | Text | `kickstartworkerbasedir` | Directory for storing kickstart files, eg: "/home/attune/kickstart". |
 
 
 

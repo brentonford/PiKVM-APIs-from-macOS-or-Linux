@@ -731,24 +731,6 @@ curl --insecure \
     --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
     &quot;https://{pikvmIpAddress}/api/atx/click?button=power_long&quot; \
     | jq &#x27;.&#x27;
-
-
-# curl --insecure --verbose \
-#     --request POST \
-#     --data &quot;action=off&amp;wait=1&quot; \
-#     --header X-KVMD-User:{pikvmAdmin.user} \
-#     --header X-KVMD-Passwd:{pikvmAdmin.password} \
-#     https://{pikvmIpAddress}/api/atx/power?action=off \
-#     | jq &#x27;.&#x27;
-
-
-# curl --insecure --verbose \
-#     --request POST \
-#     --header X-KVMD-User:{pikvmAdmin.user} \
-#     --header X-KVMD-Passwd:{pikvmAdmin.password} \
-#     https://{pikvmIpAddress}/api/atx/power?action=off_hard \
-#     wait=1 \
-#     | jq &#x27;.&#x27;
                 </code>
             </pre>
         </div>
@@ -1040,13 +1022,10 @@ cd {kickstartWorkerBaseDir}
 
 curl --insecure \
     --request POST \
-    --data-binary @kickstart_{targetServer.fqn}.iso \
+    --data-binary @kickstart_{kickstartedNode.fqn}.iso \
     --header X-KVMD-User:{pikvmUserAdmin.user} \
     --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
     https://{pikvmIpAddress}/api/msd/write?image=kickstart_{kickstartedNode.fqn}.iso
-
-# Check if this is automatically created 
-# /var/lib/kvmd/msd/.__kickstart_{targetServer.fqn}.iso.complete
                 </code>
             </pre>
         </div>

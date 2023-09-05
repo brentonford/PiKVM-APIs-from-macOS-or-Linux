@@ -1,1 +1,1 @@
-Directory for storing kickstart files, eg: "~/kickstart".
+Directory for storing kickstart files, eg: "/home/attune/kickstart".
