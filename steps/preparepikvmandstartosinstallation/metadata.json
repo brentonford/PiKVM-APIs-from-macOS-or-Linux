@@ -1,0 +1,60 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "d6b8a610-e6ba-43ab-acd5-fe1a83412c6d", 
+    "isBlueprint": false, 
+    "key": "preparepikvmandstartosinstallation", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "testpikvmauthentication"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "getpikvmsysteminfo"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "getatxstate"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "setatxpowersoftoff"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "getmsdstate"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "disconnectmsdimage"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "resetmsdstate"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "removemsdimage"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "uploadmsdimage"
+        }, 
+        {
+            "order": 450, 
+            "stepKey": "selectmsdimage"
+        }, 
+        {
+            "order": 500, 
+            "stepKey": "connectmsd"
+        }, 
+        {
+            "order": 550, 
+            "stepKey": "setatxpoweron"
+        }
+    ], 
+    "name": "Prepare PiKVM and Start OS Installation", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

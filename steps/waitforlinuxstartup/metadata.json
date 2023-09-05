@@ -1,0 +1,24 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "b5e0fa73-0ad4-4954-8e94-df2b814f839a", 
+    "isBlueprint": false, 
+    "key": "waitforlinuxstartup", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "sshisup"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "disconnectmsdimage"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "removemsdimage"
+        }
+    ], 
+    "name": "Wait for Linux Startup", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

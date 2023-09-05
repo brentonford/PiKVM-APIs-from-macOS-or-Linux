@@ -1,0 +1,20 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "2aab50f4-0e29-48ef-b8bb-eddea0bf1509", 
+    "isBlueprint": true, 
+    "key": "buildlinuxmachine", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "preparepikvmandstartosinstallation"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "waitforlinuxstartup"
+        }
+    ], 
+    "name": "Build Linux Machine", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

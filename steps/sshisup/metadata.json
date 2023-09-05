@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "c61b7787-4da3-431f-82c2-1839325c694a", 
+    "key": "sshisup", 
+    "minDowntime": 0, 
+    "name": "ssh is up", 
+    "postWait": 0, 
+    "preWait": 0, 
+    "serverKey": "targetserver", 
+    "tcpPort": 22, 
+    "type": "com.servertribe.attune.tuples.StepTcpPingTuple"
+}

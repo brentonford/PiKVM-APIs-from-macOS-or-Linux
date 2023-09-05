@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "eae8abf3-3f8a-41e8-b043-038d59eacc7b", 
+    "interpreter": 1, 
+    "key": "waitforwindowsinstallation", 
+    "name": "Wait for Windows Installation", 
+    "osCredKey": "linuxattuneuser", 
+    "serverKey": "attuneosbuildserver", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
