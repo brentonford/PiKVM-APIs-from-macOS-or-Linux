@@ -54,13 +54,16 @@ This Project contains the following Blueprints.
 
 
 
-### PiKVM Set Boot Order
-
-
 ### Build Linux Machine with PiKVM
 
 
 ### Build Windows Machine with PiKVM
+
+
+### Deploy nuc Drivers to a Drop Directory
+
+
+### PiKVM Set Boot Order
 
 
 
@@ -71,14 +74,14 @@ This Project contains the following Blueprints.
 
 | Name | Type | Script Reference | Comment |
 | ---- | ---- | ---------------- | ------- |
-| Kickstart Worker Linux User | Linux/Unix Credential | `kickstartworkerlinuxuser` | The user on a linux device used to connect to another device or perform tasks. This could be the device that Attune is running on. |
-| PiKVM User: Admin | Linux/Unix Credential | `pikvmuseradmin` | The PiKVM Admin user. |
-| Kickstarted Node | Basic Node | `kickstartednode` | The node being kickstarted. |
+| Automation Worker Base Directory | Text | `automationworkerbasedirectory` | Directory for storing automation files. |
+| Automation Worker Linux Node | Linux/Unix Node | `automationworkerlinuxnode` | A linux device used to connect to another device or perform tasks. This could be the device that Attune is running on. |
+| Automation Worker Linux User | Linux/Unix Credential | `automationworkerlinuxuser` | The user on a linux device used to connect to another device or perform tasks. This could be the device that Attune is running on. |
+| Automation Worker Windows Node | Windows Node | `automationworkerwindowsnode` | The node being kickstarted. This parameter is for Windows specific Steps. |
+| New Node | Basic Node | `newnode` | The node being kickstarted. |
 | PiKVM IP Address | Text | `pikvmipaddress` | The IP Address of the PiKVM. |
-| Kickstarted Windows Node | Windows Node | `kickstartedwindowsnode` | The node being kickstarted. This parameter is for Windows specific Steps. |
-| Kickstart Worker Linux Node | Linux/Unix Node | `kickstartworkerlinuxnode` | A linux device used to connect to another device or perform tasks. This could be the device that Attune is running on. |
-| Kickstarted Windows User | Windows Credential | `kickstartedwindowsuser` | The user for the node being kickstarted. This parameter is for Windows specific Steps. |
-| Kickstart Worker Base Dir | Text | `kickstartworkerbasedir` | Directory for storing kickstart files, eg: "/home/attune/kickstart". |
+| PiKVM User: Admin | Linux/Unix Credential | `pikvmuseradmin` | The PiKVM Admin user. |
+| New Node Windows User | Windows Credential | `newnodewindowsuser` | The user for the node being kickstarted. This parameter is for Windows specific Steps. |
 
 
 
@@ -87,6 +90,7 @@ This Project contains the following Blueprints.
 
 | Name | Type | Comment |
 | ---- | ---- | ------- |
+| nuc Drivers | Large Archives |  |
 
 
 

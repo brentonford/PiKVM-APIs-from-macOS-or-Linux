@@ -2,5 +2,5 @@ curl --insecure \
     --request POST \
     --header X-KVMD-User:{pikvmUserAdmin.user} \
     --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
-    "https://{pikvmIpAddress}/api/msd/set_params?image=kickstart_{kickstartedNode.fqn}.iso&cdrom=1" \
+    "https://{pikvmIpAddress}/api/msd/set_params?image=kickstart_{newNode.fqn}.iso&cdrom=1" \
     | jq '.'

@@ -515,7 +515,7 @@
                         </div>
                         <div class="row py-1">
                             <code class="language-sql">
-ssh {kickstartworkerlinuxuser}@{kickstartworkerlinuxnode}
+ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                             </code>
                         </div>
 
@@ -964,7 +964,7 @@ curl --insecure --verbose \
     --request POST \
     --header X-KVMD-User:{pikvmUserAdmin.user} \
     --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
-    https://{pikvmIpAddress}/api/msd/remove?image=kickstart_{kickstartedNode.fqn}.iso
+    https://{pikvmIpAddress}/api/msd/remove?image=kickstart_{newNode.fqn}.iso
                 </code>
             </pre>
         </div>
@@ -1018,14 +1018,14 @@ curl --insecure --verbose \
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {kickstartWorkerBaseDir}
+cd {automationWorkerBaseDirectory}
 
 curl --insecure \
     --request POST \
-    --data-binary @kickstart_{kickstartedNode.fqn}.iso \
+    --data-binary @kickstart_{newNode.fqn}.iso \
     --header X-KVMD-User:{pikvmUserAdmin.user} \
     --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
-    https://{pikvmIpAddress}/api/msd/write?image=kickstart_{kickstartedNode.fqn}.iso
+    https://{pikvmIpAddress}/api/msd/write?image=kickstart_{newNode.fqn}.iso
                 </code>
             </pre>
         </div>
@@ -1083,7 +1083,7 @@ curl --insecure \
     --request POST \
     --header X-KVMD-User:{pikvmUserAdmin.user} \
     --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
-    &quot;https://{pikvmIpAddress}/api/msd/set_params?image=kickstart_{kickstartedNode.fqn}.iso&amp;cdrom=1&quot; \
+    &quot;https://{pikvmIpAddress}/api/msd/set_params?image=kickstart_{newNode.fqn}.iso&amp;cdrom=1&quot; \
     | jq &#x27;.&#x27;
                 </code>
             </pre>
@@ -1437,7 +1437,7 @@ curl --insecure --verbose \
     --request POST \
     --header X-KVMD-User:{pikvmUserAdmin.user} \
     --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
-    https://{pikvmIpAddress}/api/msd/remove?image=kickstart_{kickstartedNode.fqn}.iso
+    https://{pikvmIpAddress}/api/msd/remove?image=kickstart_{newNode.fqn}.iso
                 </code>
             </pre>
         </div>
@@ -1576,12 +1576,12 @@ or 2 minutes have passed.</p>
                         </div>
                         <div class="row py-1">
                             <code class="language-sql">
-mstsc /admin /v:{kickstartedwindowsnode}
+mstsc /admin /v:{automationworkerwindowsnode}
                             </code>
                         </div>
                         <div class="row">
                             <p>
-                                Login as user {kickstartedwindowsuser} and open a
+                                Login as user {newnodewindowsuser} and open a
                                 command prompt.
                             </p>
                         </div>

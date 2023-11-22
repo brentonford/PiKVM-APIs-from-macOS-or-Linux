@@ -5,8 +5,8 @@
     "interpreter": 1, 
     "key": "pikvmsetbootordertocdromfirst", 
     "name": "PiKVM Set Boot Order to CDROM First", 
-    "osCredKey": "kickstartworkerlinuxuser", 
-    "serverKey": "kickstartworkerlinuxnode", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
 }

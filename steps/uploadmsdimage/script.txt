@@ -1,8 +1,8 @@
-cd {kickstartWorkerBaseDir}
+cd {automationWorkerBaseDirectory}
 
 curl --insecure \
     --request POST \
-    --data-binary @kickstart_{kickstartedNode.fqn}.iso \
+    --data-binary @kickstart_{newNode.fqn}.iso \
     --header X-KVMD-User:{pikvmUserAdmin.user} \
     --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
-    https://{pikvmIpAddress}/api/msd/write?image=kickstart_{kickstartedNode.fqn}.iso
+    https://{pikvmIpAddress}/api/msd/write?image=kickstart_{newNode.fqn}.iso

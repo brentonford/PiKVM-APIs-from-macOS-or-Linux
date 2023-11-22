@@ -6,13 +6,13 @@
 
 
 <head>
-    <title>How to PiKVM Set Boot Order - Attune Automation</title>
+    <title>How to Deploy nuc Drivers to a Drop Directory - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to PiKVM Set Boot Order - Attune Automation">
+          content="How to Deploy nuc Drivers to a Drop Directory - Attune Automation">
     <meta name="description"
           content="">
     <meta name="robots"
@@ -21,13 +21,13 @@
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo PiKVM Set Boot Order - Attune Automation" />
+          content="HowTo Deploy nuc Drivers to a Drop Directory - Attune Automation" />
     <meta property="og:description" content="" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to PiKVM Set Boot Order - Attune Automation" />
+          content="How to Deploy nuc Drivers to a Drop Directory - Attune Automation" />
     <meta name="twitter:description" content="" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
@@ -119,7 +119,7 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>PiKVM Set Boot Order</strong>
+                    <strong>Deploy nuc Drivers to a Drop Directory</strong>
                 </li>
             </ol>
         </nav>
@@ -133,7 +133,7 @@
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to PiKVM Set Boot Order
+                How to Deploy nuc Drivers to a Drop Directory
             </h1>
         </div>
     </div>
@@ -197,7 +197,7 @@
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>PiKVM Set Boot Order</strong>
+                            <strong>Deploy nuc Drivers to a Drop Directory</strong>
                         </a>
                     </p>
 
@@ -206,32 +206,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createpikvmpythonvirtualenvironment">
-                            <strong>Step 1 -</strong> Create PiKVM Python Virtual Environment
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#installredfishtool">
-                            <strong>Step 2 -</strong> Install redfishtool
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#redfishtoolshowsystemscollection">
-                            <strong>Step 3 -</strong> redfishtool Show Systems Collection
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#pikvmsetbootordertocdromfirst">
-                            <strong>Step 4 -</strong> PiKVM Set Boot Order to CDROM First
+                        <a href="#pushnucdriverstoadropdirectory">
+                            <strong>Step 1 -</strong> Push nuc Drivers to a Drop Directory
                         </a>
                     </p>
 
@@ -294,7 +270,7 @@
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>PiKVM Set Boot Order</strong>
+                You've automated: <strong>Deploy nuc Drivers to a Drop Directory</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -325,20 +301,13 @@
 
 
                     <div class="row pt-5">
-                        <h3 id="createpikvmpythonvirtualenvironment">
-                            <a href="#createpikvmpythonvirtualenvironment">
-                                <strong>Step 1 -</strong> Create PiKVM Python Virtual Environment
+                        <h3 id="pushnucdriverstoadropdirectory">
+                            <a href="#pushnucdriverstoadropdirectory">
+                                <strong>Step 1 -</strong> Push nuc Drivers to a Drop Directory
                             </a>
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -361,242 +330,27 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                         </div>
 
 
-
     
 
 
 
     <div class="row">
         <p>
-            Execute the following script:
+            
         </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-DIR=&quot;ks_pikvm_py_venv&quot;
-
-if [ -d &quot;${DIR}&quot; ]
-then
-    echo &quot;${DIR} already exists.&quot;
-else
-    mkdir &quot;${DIR}&quot;
-    cd &quot;${DIR}&quot;
-    python -m venv env
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="installredfishtool">
-                            <a href="#installredfishtool">
-                                <strong>Step 2 -</strong> Install redfishtool
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
         <p>
-            Execute the following script:
+            Copy the File(s)
+            <strong>nuc_Drivers.None</strong>
+            to the target node.
         </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-DIR=&quot;ks_pikvm_py_venv&quot;
-
-source &quot;${DIR}/env/bin/activate&quot;
-
-if pip list | grep -iq redfishtool
-then
-    echo &quot;redfishtool is already installed.&quot;
-else
-    pip install redfishtool
-    pip list
-fi
-
-deactivate
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="redfishtoolshowsystemscollection">
-                            <a href="#redfishtoolshowsystemscollection">
-                                <strong>Step 3 -</strong> redfishtool Show Systems Collection
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
         <p>
-            Execute the following script:
+            <strong>Extract and deploy the File(s)</strong> here:
         </p>
     </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-DIR=&quot;ks_pikvm_py_venv&quot;
-
-source &quot;${DIR}/env/bin/activate&quot;
-
-redfishtool about
-
-ID=$(redfishtool -S Never -r {pikvmIpAddress} root \
-    -p root \
-    Systems | jq &quot;.Id&quot;)
-    
-# redfishtool -S Never -r {pikvmIpAddress} root -p root \
-#     Systems list
-
-# redfishtool -S Never -r {pikvmIpAddress} root -p root \
-#     Systems -I &quot;RootService&quot;
-    
-# redfishtool -S Never -r {pikvmIpAddress} root -p root \
-#     Systems get
-    
-redfishtool -S Never -r {pikvmIpAddress} root -p root \
-    Systems -I &quot;${ID}&quot; getBootOverride
-    
-deactivate
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="pikvmsetbootordertocdromfirst">
-                            <a href="#pikvmsetbootordertocdromfirst">
-                                <strong>Step 4 -</strong> PiKVM Set Boot Order to CDROM First
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-DIR=&quot;ks_pikvm_py_venv&quot;
-
-source &quot;${DIR}/env/bin/activate&quot;
-
-ID=$(redfishtool -S Never -r {pikvmIpAddress} root \
-    -p root \
-    Systems | jq &quot;.Id&quot;)
-
-redfishtool about
-
-redfishtool -S Never -r {pikvmIpAddress} root -p root \
-    Systems -I &quot;${ID}&quot; setBootOverride Once CD
-
-deactivate
-                </code>
-            </pre>
-        </div>
+    <div class="row py-1">
+        <code class="language-bash">
+{automationWorkerBaseDirectory}/drivers-{newNode.fqn}, relative to the home directory
+        </code>
     </div>
 
 

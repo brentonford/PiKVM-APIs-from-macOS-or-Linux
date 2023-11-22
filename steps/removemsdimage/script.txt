@@ -2,4 +2,4 @@ curl --insecure --verbose \
     --request POST \
     --header X-KVMD-User:{pikvmUserAdmin.user} \
     --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
-    https://{pikvmIpAddress}/api/msd/remove?image=kickstart_{kickstartedNode.fqn}.iso
+    https://{pikvmIpAddress}/api/msd/remove?image=kickstart_{newNode.fqn}.iso

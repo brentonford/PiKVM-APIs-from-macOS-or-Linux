@@ -7,7 +7,7 @@
     "name": "ssh is up", 
     "postWait": 0, 
     "preWait": 0, 
-    "serverKey": "kickstartednode", 
+    "serverKey": "newnode", 
     "tcpPort": 22, 
     "type": "com.servertribe.attune.tuples.StepTcpPingTuple"
 }

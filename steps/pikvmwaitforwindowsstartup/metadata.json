@@ -8,8 +8,8 @@
     "interpreterScriptSyntax": "", 
     "key": "pikvmwaitforwindowsstartup", 
     "name": "PiKVM Wait for Windows Startup", 
-    "osCredKey": "kickstartedwindowsuser", 
-    "serverKey": "kickstartedwindowsnode", 
+    "osCredKey": "newnodewindowsuser", 
+    "serverKey": "automationworkerwindowsnode", 
     "successExitCode": 0, 
     "timeout": 150, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"
