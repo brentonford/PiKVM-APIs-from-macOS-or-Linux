@@ -9,7 +9,7 @@
     "key": "pikvmwaitforwindowsstartup", 
     "name": "PiKVM Wait for Windows Startup", 
     "osCredKey": "newnodewindowsuser", 
-    "serverKey": "automationworkerwindowsnode", 
+    "serverKey": "newwindowsnode", 
     "successExitCode": 0, 
     "timeout": 150, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

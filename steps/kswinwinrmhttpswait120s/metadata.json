@@ -7,7 +7,7 @@
     "name": "KS Win WinRM HTTPS Wait 120s", 
     "postWait": 120, 
     "preWait": 0, 
-    "serverKey": "automationworkerwindowsnode", 
+    "serverKey": "newwindowsnode", 
     "tcpPort": 5986, 
     "type": "com.servertribe.attune.tuples.StepTcpPingTuple"
 }

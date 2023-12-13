@@ -77,11 +77,12 @@ This Project contains the following Blueprints.
 | Automation Worker Base Directory | Text | `automationworkerbasedirectory` | Directory for storing automation files. |
 | Automation Worker Linux Node | Linux/Unix Node | `automationworkerlinuxnode` | A linux device used to connect to another device or perform tasks. This could be the device that Attune is running on. |
 | Automation Worker Linux User | Linux/Unix Credential | `automationworkerlinuxuser` | The user on a linux device used to connect to another device or perform tasks. This could be the device that Attune is running on. |
-| Automation Worker Windows Node | Windows Node | `automationworkerwindowsnode` | The node being kickstarted. This parameter is for Windows specific Steps. |
 | New Node | Basic Node | `newnode` | The node being kickstarted. |
+| New Node Windows User | Windows Credential | `newnodewindowsuser` | The user for the node being kickstarted. This parameter is for Windows specific Steps. |
+| New Windows Node | Windows Node | `newwindowsnode` | The node being kickstarted. This parameter is for Windows specific Steps. |
+| PiKVM | Linux/Unix Node | `pikvm` |  |
 | PiKVM IP Address | Text | `pikvmipaddress` | The IP Address of the PiKVM. |
 | PiKVM User: Admin | Linux/Unix Credential | `pikvmuseradmin` | The PiKVM Admin user. |
-| New Node Windows User | Windows Credential | `newnodewindowsuser` | The user for the node being kickstarted. This parameter is for Windows specific Steps. |
 
 
 

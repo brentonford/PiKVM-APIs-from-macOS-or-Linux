@@ -39,19 +39,19 @@
             "stepKey": "removemsdimage"
         }, 
         {
-            "order": 400, 
+            "order": 450, 
             "stepKey": "uploadmsdimage"
         }, 
         {
-            "order": 450, 
+            "order": 500, 
             "stepKey": "selectmsdimage"
         }, 
         {
-            "order": 500, 
+            "order": 550, 
             "stepKey": "connectmsd"
         }, 
         {
-            "order": 550, 
+            "order": 600, 
             "stepKey": "setatxpoweron"
         }
     ], 

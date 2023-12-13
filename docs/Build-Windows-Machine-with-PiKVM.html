@@ -539,6 +539,11 @@ CURL_OUTPUT=$(curl --insecure \
     --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
     https://{pikvmIpAddress}/api/auth/check)
     
+
+if ! type xorriso &gt; /dev/null; then
+    brew install jq
+fi
+
 echo &quot;${CURL_OUTPUT}&quot; | jq &#x27;.&#x27;
 
 OK=$(echo &quot;${CURL_OUTPUT}&quot; | jq &#x27;.ok&#x27;)
@@ -1021,8 +1026,8 @@ curl --insecure --verbose \
 cd {automationWorkerBaseDirectory}
 
 curl --insecure \
-    --request POST \
-    --data-binary @kickstart_{newNode.fqn}.iso \
+    -T &quot;kickstart_{newNode.fqn}.iso&quot; \
+    -X POST \
     --header X-KVMD-User:{pikvmUserAdmin.user} \
     --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
     https://{pikvmIpAddress}/api/msd/write?image=kickstart_{newNode.fqn}.iso
@@ -1289,8 +1294,8 @@ curl --insecure --verbose \
 function numLock() {
     curl --insecure  \
         --request GET \
-        --header X-KVMD-User:{pikvmAdmin.user} \
-        --header X-KVMD-Passwd:{pikvmAdmin.password} \
+        --header X-KVMD-User:{pikvmUserAdmin.user} \
+        --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
         &quot;https://{pikvmIpAddress}/api/hid&quot; 2&gt; /dev/null \
         | jq &#x27;.result.keyboard.leds.num&#x27;
 
@@ -1576,7 +1581,7 @@ or 2 minutes have passed.</p>
                         </div>
                         <div class="row py-1">
                             <code class="language-sql">
-mstsc /admin /v:{automationworkerwindowsnode}
+mstsc /admin /v:{newwindowsnode}
                             </code>
                         </div>
                         <div class="row">

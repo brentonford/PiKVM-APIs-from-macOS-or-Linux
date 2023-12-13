@@ -515,6 +515,11 @@ CURL_OUTPUT=$(curl --insecure \
     --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
     https://{pikvmIpAddress}/api/auth/check)
     
+
+if ! type xorriso &gt; /dev/null; then
+    brew install jq
+fi
+
 echo &quot;${CURL_OUTPUT}&quot; | jq &#x27;.&#x27;
 
 OK=$(echo &quot;${CURL_OUTPUT}&quot; | jq &#x27;.ok&#x27;)
@@ -997,8 +1002,8 @@ curl --insecure --verbose \
 cd {automationWorkerBaseDirectory}
 
 curl --insecure \
-    --request POST \
-    --data-binary @kickstart_{newNode.fqn}.iso \
+    -T &quot;kickstart_{newNode.fqn}.iso&quot; \
+    -X POST \
     --header X-KVMD-User:{pikvmUserAdmin.user} \
     --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
     https://{pikvmIpAddress}/api/msd/write?image=kickstart_{newNode.fqn}.iso

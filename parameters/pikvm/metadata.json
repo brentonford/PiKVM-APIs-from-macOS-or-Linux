@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "97753a2d-7f35-4429-9ac9-d95461753bc4", 
+    "key": "pikvm", 
+    "name": "PiKVM", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.LinuxServer"
+}
