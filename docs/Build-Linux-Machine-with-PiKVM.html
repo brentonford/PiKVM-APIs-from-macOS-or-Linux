@@ -514,11 +514,6 @@ CURL_OUTPUT=$(curl --insecure \
     --header X-KVMD-User:{pikvmUserAdmin.user} \
     --header X-KVMD-Passwd:{pikvmUserAdmin.password} \
     https://{pikvmIpAddress}/api/auth/check)
-    
-
-if ! type xorriso &gt; /dev/null; then
-    brew install jq
-fi
 
 echo &quot;${CURL_OUTPUT}&quot; | jq &#x27;.&#x27;
 
