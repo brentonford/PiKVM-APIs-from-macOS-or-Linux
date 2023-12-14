@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "7cde9620-89e6-4462-b032-59cc8f13ab9b", 
+    "interpreter": 1, 
+    "key": "confirmcommandlinejsonprocessorisinstalled", 
+    "name": "Confirm Command-line JSON processor is installed", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

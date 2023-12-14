@@ -8,34 +8,38 @@
     "links": [
         {
             "order": 0, 
-            "stepKey": "testpikvmauthentication"
+            "stepKey": "confirmcommandlinejsonprocessorisinstalled"
         }, 
         {
             "order": 50, 
-            "stepKey": "getpikvmsysteminfo"
+            "stepKey": "testpikvmauthentication"
         }, 
         {
             "order": 100, 
-            "stepKey": "getatxstate"
+            "stepKey": "getpikvmsysteminfo"
         }, 
         {
             "order": 150, 
-            "stepKey": "setatxpowersoftoff"
+            "stepKey": "getatxstate"
         }, 
         {
             "order": 200, 
-            "stepKey": "getmsdstate"
+            "stepKey": "setatxpowersoftoff"
         }, 
         {
             "order": 250, 
-            "stepKey": "disconnectmsdimage"
+            "stepKey": "getmsdstate"
         }, 
         {
             "order": 300, 
-            "stepKey": "resetmsdstate"
+            "stepKey": "disconnectmsdimage"
         }, 
         {
             "order": 350, 
+            "stepKey": "resetmsdstate"
+        }, 
+        {
+            "order": 400, 
             "stepKey": "removemsdimage"
         }, 
         {

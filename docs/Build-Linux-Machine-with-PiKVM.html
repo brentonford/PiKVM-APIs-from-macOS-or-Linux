@@ -214,8 +214,16 @@
         
 
                     <p class="text-muted pt-2">
+                        <a href="#confirmcommandlinejsonprocessorisinstalled">
+                            <strong>Step 1.1 -</strong> Confirm Command-line JSON processor is installed
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#testpikvmauthentication">
-                            <strong>Step 1.1 -</strong> Test PiKVM Authentication
+                            <strong>Step 1.2 -</strong> Test PiKVM Authentication
                         </a>
                     </p>
 
@@ -223,7 +231,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#getpikvmsysteminfo">
-                            <strong>Step 1.2 -</strong> Get PiKVM System Info
+                            <strong>Step 1.3 -</strong> Get PiKVM System Info
                         </a>
                     </p>
 
@@ -231,7 +239,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#getatxstate">
-                            <strong>Step 1.3 -</strong> Get ATX State
+                            <strong>Step 1.4 -</strong> Get ATX State
                         </a>
                     </p>
 
@@ -239,7 +247,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#setatxpowersoftoff">
-                            <strong>Step 1.4 -</strong> Set ATX Power Soft Off
+                            <strong>Step 1.5 -</strong> Set ATX Power Soft Off
                         </a>
                     </p>
 
@@ -247,7 +255,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#getmsdstate">
-                            <strong>Step 1.5 -</strong> Get MSD State
+                            <strong>Step 1.6 -</strong> Get MSD State
                         </a>
                     </p>
 
@@ -255,7 +263,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#disconnectmsdimage">
-                            <strong>Step 1.6 -</strong> Disconnect MSD Image
+                            <strong>Step 1.7 -</strong> Disconnect MSD Image
                         </a>
                     </p>
 
@@ -263,7 +271,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#resetmsdstate">
-                            <strong>Step 1.7 -</strong> Reset MSD State
+                            <strong>Step 1.8 -</strong> Reset MSD State
                         </a>
                     </p>
 
@@ -271,7 +279,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#removemsdimage">
-                            <strong>Step 1.8 -</strong> Remove MSD Image
+                            <strong>Step 1.9 -</strong> Remove MSD Image
                         </a>
                     </p>
 
@@ -279,7 +287,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#uploadmsdimage">
-                            <strong>Step 1.9 -</strong> Upload MSD Image
+                            <strong>Step 1.10 -</strong> Upload MSD Image
                         </a>
                     </p>
 
@@ -287,7 +295,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#selectmsdimage">
-                            <strong>Step 1.10 -</strong> Select MSD Image
+                            <strong>Step 1.11 -</strong> Select MSD Image
                         </a>
                     </p>
 
@@ -295,7 +303,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#connectmsd">
-                            <strong>Step 1.11 -</strong> Connect MSD
+                            <strong>Step 1.12 -</strong> Connect MSD
                         </a>
                     </p>
 
@@ -303,7 +311,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#setatxpoweron">
-                            <strong>Step 1.12 -</strong> Set ATX Power On
+                            <strong>Step 1.13 -</strong> Set ATX Power On
                         </a>
                     </p>
 
@@ -460,20 +468,13 @@
 
 
                     <div class="row pt-5">
-                        <h4 id="testpikvmauthentication">
-                            <a href="#testpikvmauthentication">
-                                <strong>Step 1.1 -</strong> Test PiKVM Authentication
+                        <h4 id="confirmcommandlinejsonprocessorisinstalled">
+                            <a href="#confirmcommandlinejsonprocessorisinstalled">
+                                <strong>Step 1.1 -</strong> Confirm Command-line JSON processor is installed
                             </a>
                         </h4>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -495,6 +496,94 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                             </code>
                         </div>
 
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
+then
+
+    if which jq &gt;/dev/null; then
+        echo &quot;jq is installed.&quot;
+    else
+        echo &quot;jq is not installed.&quot;
+        dnf -y install jq
+    fi
+
+elif [[ -f /etc/debian_version ]]
+then
+
+    if which jq &gt;/dev/null; then
+        echo &quot;jq is installed.&quot;
+    else
+        echo &quot;jq is not installed.&quot;
+        apt-get -y install jq
+    fi
+
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+then
+
+    if which jq &gt;/dev/null; then
+        echo &quot;jq is installed.&quot;
+    else
+        echo &quot;jq is not installed.&quot;
+        brew -y install jq
+    fi
+
+else
+    
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="testpikvmauthentication">
+                            <a href="#testpikvmauthentication">
+                                <strong>Step 1.2 -</strong> Test PiKVM Authentication
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
 
 
     
@@ -540,7 +629,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="getpikvmsysteminfo">
                             <a href="#getpikvmsysteminfo">
-                                <strong>Step 1.2 -</strong> Get PiKVM System Info
+                                <strong>Step 1.3 -</strong> Get PiKVM System Info
                             </a>
                         </h4>
                     </div>
@@ -607,7 +696,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="getatxstate">
                             <a href="#getatxstate">
-                                <strong>Step 1.3 -</strong> Get ATX State
+                                <strong>Step 1.4 -</strong> Get ATX State
                             </a>
                         </h4>
                     </div>
@@ -664,7 +753,7 @@ curl --insecure \
                     <div class="row pt-5">
                         <h4 id="setatxpowersoftoff">
                             <a href="#setatxpowersoftoff">
-                                <strong>Step 1.4 -</strong> Set ATX Power Soft Off
+                                <strong>Step 1.5 -</strong> Set ATX Power Soft Off
                             </a>
                         </h4>
                     </div>
@@ -723,7 +812,7 @@ curl --insecure \
                     <div class="row pt-5">
                         <h4 id="getmsdstate">
                             <a href="#getmsdstate">
-                                <strong>Step 1.5 -</strong> Get MSD State
+                                <strong>Step 1.6 -</strong> Get MSD State
                             </a>
                         </h4>
                     </div>
@@ -782,7 +871,7 @@ echo &quot;${CURL_OUTPUT}&quot; | jq &#x27;.&#x27;
                     <div class="row pt-5">
                         <h4 id="disconnectmsdimage">
                             <a href="#disconnectmsdimage">
-                                <strong>Step 1.6 -</strong> Disconnect MSD Image
+                                <strong>Step 1.7 -</strong> Disconnect MSD Image
                             </a>
                         </h4>
                     </div>
@@ -841,7 +930,7 @@ curl --insecure --verbose \
                     <div class="row pt-5">
                         <h4 id="resetmsdstate">
                             <a href="#resetmsdstate">
-                                <strong>Step 1.7 -</strong> Reset MSD State
+                                <strong>Step 1.8 -</strong> Reset MSD State
                             </a>
                         </h4>
                     </div>
@@ -899,7 +988,7 @@ curl --insecure \
                     <div class="row pt-5">
                         <h4 id="removemsdimage">
                             <a href="#removemsdimage">
-                                <strong>Step 1.8 -</strong> Remove MSD Image
+                                <strong>Step 1.9 -</strong> Remove MSD Image
                             </a>
                         </h4>
                     </div>
@@ -957,7 +1046,7 @@ curl --insecure --verbose \
                     <div class="row pt-5">
                         <h4 id="uploadmsdimage">
                             <a href="#uploadmsdimage">
-                                <strong>Step 1.9 -</strong> Upload MSD Image
+                                <strong>Step 1.10 -</strong> Upload MSD Image
                             </a>
                         </h4>
                     </div>
@@ -1018,7 +1107,7 @@ curl --insecure \
                     <div class="row pt-5">
                         <h4 id="selectmsdimage">
                             <a href="#selectmsdimage">
-                                <strong>Step 1.10 -</strong> Select MSD Image
+                                <strong>Step 1.11 -</strong> Select MSD Image
                             </a>
                         </h4>
                     </div>
@@ -1077,7 +1166,7 @@ curl --insecure \
                     <div class="row pt-5">
                         <h4 id="connectmsd">
                             <a href="#connectmsd">
-                                <strong>Step 1.11 -</strong> Connect MSD
+                                <strong>Step 1.12 -</strong> Connect MSD
                             </a>
                         </h4>
                     </div>
@@ -1136,7 +1225,7 @@ curl --insecure --verbose \
                     <div class="row pt-5">
                         <h4 id="setatxpoweron">
                             <a href="#setatxpoweron">
-                                <strong>Step 1.12 -</strong> Set ATX Power On
+                                <strong>Step 1.13 -</strong> Set ATX Power On
                             </a>
                         </h4>
                     </div>
