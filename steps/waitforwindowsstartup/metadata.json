@@ -23,10 +23,6 @@
             "stepKey": "winrmhttps"
         }, 
         {
-            "order": 250, 
-            "stepKey": "winrmhttpswaitfordownup"
-        }, 
-        {
             "order": 300, 
             "stepKey": "pikvmwaitforwindowsstartup"
         }
