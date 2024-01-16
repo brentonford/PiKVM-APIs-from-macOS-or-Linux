@@ -60,9 +60,6 @@ This Project contains the following Blueprints.
 ### Build Windows Machine with PiKVM
 
 
-### Deploy nuc Drivers to a Drop Directory
-
-
 ### PiKVM Set Boot Order
 
 
@@ -91,7 +88,6 @@ This Project contains the following Blueprints.
 
 | Name | Type | Comment |
 | ---- | ---- | ------- |
-| nuc Drivers | Large Archives |  |
 
 
 
