@@ -1,0 +1,36 @@
+atx_state=$(curl -s -k -X GET \
+    "https://{pikvmIpAddress}/api/atx" \
+    -H "X-KVMD-User: {pikvmUserAdmin.user}" \
+    -H "X-KVMD-Passwd: {pikvmUserAdmin.password}")
+
+if [[ "$(echo "$atx_state" | jq -r '.result.leds.power')" == "false" ]]
+then
+    echo "Power is OFF!"
+else
+    echo $atx_state
+    echo "Error: atx power state ON or invalid response!"
+    exit 1
+fi
+
+echo "Starting device..."
+power=$(curl -s -k -X POST \
+    "https://{pikvmIpAddress}/api/atx/click?button=power" \
+    -H "X-KVMD-User: {pikvmUserAdmin.user}" \
+    -H "X-KVMD-Passwd: {pikvmUserAdmin.password}")
+
+sleep 5
+
+atx_state=$(curl -s -k -X GET \
+    "https://{pikvmIpAddress}/api/atx" \
+    -H "X-KVMD-User: {pikvmUserAdmin.user}" \
+    -H "X-KVMD-Passwd: {pikvmUserAdmin.password}")
+
+if [[ "$(echo "$atx_state" | jq -r '.result.leds.power')" == "true" ]]
+then
+    echo "Power is ON!"
+else
+    echo $power
+    echo $atx_state
+    echo "Error: atx power state OFF or invalid response!"
+    exit 1
+fi

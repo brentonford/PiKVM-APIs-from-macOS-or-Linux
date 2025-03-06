@@ -1,0 +1,37 @@
+NumLock() {
+    local numLockStatus
+    numLockStatus=$(curl -s -k \
+        -H "X-KVMD-User: {pikvmUserAdmin.user}" \
+        -H "X-KVMD-Passwd: {pikvmUserAdmin.password}" \
+        "https://{pikvmIpAddress}/api/hid"\
+        | jq -r '.result.keyboard.leds.num')
+    
+    if [[ "$numLockStatus" == "true" ]]; then
+        echo "true"
+    elif [[ "$numLockStatus" == "false" ]]; then
+        echo "false"
+    else
+        echo "Error: Invalid response."
+        exit 1
+    fi
+}
+
+echo "Waiting for device to boot..."
+
+while [[ "$(NumLock)" == "false" ]]; do
+    sleep 1
+done
+
+echo "Waiting for installer..."
+
+while [[ "$(NumLock)" == "true" ]]; do
+    sleep 1
+done
+
+echo "Waiting for device to reboot..."
+
+while [[ "$(NumLock)" == "false" ]]; do
+    sleep 1
+done
+
+echo "Installation is complete!"

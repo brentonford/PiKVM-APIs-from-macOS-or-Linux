@@ -8,7 +8,7 @@
     "interpreterScriptSyntax": "", 
     "key": "pikvmwaitforwindowsstartup", 
     "name": "PiKVM Wait for Windows Startup", 
-    "osCredKey": "newnodewindowsuser", 
+    "osCredKey": "newnodewindowsusernonprivileged", 
     "serverKey": "newwindowsnode", 
     "successExitCode": 0, 
     "timeout": 150, 

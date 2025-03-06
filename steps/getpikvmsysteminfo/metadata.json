@@ -5,8 +5,8 @@
     "interpreter": 1, 
     "key": "getpikvmsysteminfo", 
     "name": "Get PiKVM System Info", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "workerlinuxusernonprivileged", 
+    "serverKey": "workerlinuxnode", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
 }

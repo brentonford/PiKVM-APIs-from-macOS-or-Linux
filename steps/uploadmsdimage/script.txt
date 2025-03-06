@@ -1,4 +1,4 @@
-cd {automationWorkerBaseDirectory}
+cd {workerBaseDirectory}
 
 curl --insecure \
     -T "kickstart_{newNode.fqn}.iso" \

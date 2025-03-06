@@ -1,0 +1,36 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "3d858217-8f09-4a0c-a347-1cbcfa7788ff", 
+    "isBlueprint": true, 
+    "key": "buildlinuxmachinewithpikvmstreamlined", 
+    "links": [
+        {
+            "stepKey": "poweroffmachine"
+        }, 
+        {
+            "stepKey": "removeimageanddisconnectmsd"
+        }, 
+        {
+            "stepKey": "uploadimage"
+        }, 
+        {
+            "stepKey": "selectandconnectmsd"
+        }, 
+        {
+            "stepKey": "poweronmachine"
+        }, 
+        {
+            "stepKey": "waitforlinuxinstallation"
+        }, 
+        {
+            "stepKey": "removeimageanddisconnectmsd"
+        }, 
+        {
+            "stepKey": "machinestarted"
+        }
+    ], 
+    "name": "Build Linux Machine with PiKVM: streamlined", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

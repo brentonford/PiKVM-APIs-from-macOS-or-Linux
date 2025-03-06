@@ -1,0 +1,25 @@
+select_msd=$(curl -s -k -X POST \
+    "https://{pikvmIpAddress}/api/msd/set_params?image=kickstart_{newLinuxNode.fqn}.iso" \
+    -H "X-KVMD-User: {pikvmUserAdmin.user}" \
+    -H "X-KVMD-Passwd: {pikvmUserAdmin.password}")
+    
+connect_msd=$(curl -s -k -X POST \
+    "https://{pikvmIpAddress}/api/msd/set_connected?connected=1" \
+    -H "X-KVMD-User: {pikvmUserAdmin.user}" \
+    -H "X-KVMD-Passwd: {pikvmUserAdmin.password}")
+
+msd_state=$(curl -s -k -X GET \
+    "https://{pikvmIpAddress}/api/msd" \
+    -H "X-KVMD-User: {pikvmUserAdmin.user}" \
+    -H "X-KVMD-Passwd: {pikvmUserAdmin.password}")
+  
+if [[ "$(echo "$msd_state" | jq -r '.result.drive.connected')" == "true" ]]
+then
+    echo "MSD Connected!"
+else
+    echo $select_msd
+    echo $connect_msd
+    echo $msd_state
+    echo "Error: MSD failed to connect or invalid response!"
+    exit 1
+fi

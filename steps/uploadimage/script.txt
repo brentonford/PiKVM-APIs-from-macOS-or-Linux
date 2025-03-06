@@ -1,0 +1,20 @@
+upload_file=$(curl -k -X POST -T "{workerBaseDirectory}/kickstart_{newLinuxNode.fqn}.iso" \
+    "https://{pikvmIpAddress}/api/msd/write?image=kickstart_{newLinuxNode.fqn}.iso" \
+    -H "X-KVMD-User: {pikvmUserAdmin.user}" \
+    -H "X-KVMD-Passwd: {pikvmUserAdmin.password}")
+
+msd_state=$(curl -s -k -X GET \
+    "https://{pikvmIpAddress}/api/msd" \
+    -H "X-KVMD-User: {pikvmUserAdmin.user}" \
+    -H "X-KVMD-Passwd: {pikvmUserAdmin.password}")
+
+if [[ "$(echo "$msd_state" | jq --arg name "kickstart_{newLinuxNode.fqn}.iso" '.result.storage.images | has($name)')" == "true" ]]
+then
+    echo "file successfully uploaded!"
+else
+    echo $remove_file
+    echo $upload_file
+    echo $msd_state
+    echo "Error: file failed to upload or invalid response!"
+    exit 1
+fi

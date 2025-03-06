@@ -1,7 +1,7 @@
 {
     "externalUuid4": "a37cfc74-69e0-4817-a831-858c351d159f", 
-    "key": "automationworkerlinuxuser", 
-    "name": "Automation Worker Linux User", 
+    "key": "workerlinuxusernonprivileged", 
+    "name": "Worker Linux User: non privileged", 
     "showInPlan": true, 
     "type": "c.s.s.b.phv.LinOsCred"
 }
