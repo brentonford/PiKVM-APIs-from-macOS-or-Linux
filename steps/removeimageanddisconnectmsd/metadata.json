@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "02675d77-4859-4b82-9e75-ba44c8e32d63", 
+    "interpreter": 1, 
+    "key": "removeimageanddisconnectmsd", 
+    "name": "Remove Image and Disconnect MSD", 
+    "osCredKey": "workerusernonprivileged", 
+    "serverKey": "workerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

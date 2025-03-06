@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "33ef0f86-5baf-4bf0-b543-b07d1535124c", 
+    "interpreter": 1, 
+    "key": "poweroffmachine", 
+    "name": "Power Off Machine", 
+    "osCredKey": "workerusernonprivileged", 
+    "serverKey": "workerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

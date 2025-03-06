@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "67bc22ea-61fc-4961-9fd1-5dd0c9902fd7", 
+    "key": "newlinuxnode", 
+    "name": "New Linux Node", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.LinuxServer"
+}

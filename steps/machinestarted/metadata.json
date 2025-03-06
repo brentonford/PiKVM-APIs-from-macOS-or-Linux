@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "d9d7cf1b-26de-4fcd-b882-03049c3c8aeb", 
+    "key": "machinestarted", 
+    "minDowntime": 0, 
+    "name": "Machine started", 
+    "postWait": 0, 
+    "preWait": 0, 
+    "serverKey": "newlinuxnode", 
+    "tcpPort": 22, 
+    "type": "com.servertribe.attune.tuples.StepTcpPingTuple"
+}

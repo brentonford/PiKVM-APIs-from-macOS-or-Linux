@@ -1,0 +1,31 @@
+disconnect_msd=$(curl -s -k -X POST \
+    "https://{pikvmIpAddress}/api/msd/set_connected?connected=0" \
+    -H "X-KVMD-User: {pikvmUserAdmin.user}" \
+    -H "X-KVMD-Passwd: {pikvmUserAdmin.password}")
+
+remove_file=$(curl -s -k -X POST \
+     "https://{pikvmIpAddress}/api/msd/remove?image=kickstart_{newLinuxNode.fqn}.iso" \
+    -H "X-KVMD-User: {pikvmUserAdmin.user}" \
+    -H "X-KVMD-Passwd: {pikvmUserAdmin.password}")
+    
+reset_msd=$(curl -s -k -X POST \
+    "https://{pikvmIpAddress}/api/msd/reset" \
+    -H "X-KVMD-User: {pikvmUserAdmin.user}" \
+    -H "X-KVMD-Passwd: {pikvmUserAdmin.password}")
+    
+msd_state=$(curl -s -k -X GET \
+    "https://{pikvmIpAddress}/api/msd" \
+    -H "X-KVMD-User: {pikvmUserAdmin.user}" \
+    -H "X-KVMD-Passwd: {pikvmUserAdmin.password}")
+  
+if [[ "$(echo "$msd_state" | jq -r '.result.drive.connected')" == "false" ]]
+then
+    echo "MSD Disconnected!"
+else
+    echo $disconnect_msd
+    echo $remove_file
+    echo $reset_msd
+    echo $msd_state
+    echo "Error: MSD failed to disconnect or invalid response!"
+    exit 1
+fi

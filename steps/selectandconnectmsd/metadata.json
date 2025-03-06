@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "4b44a83a-11c9-4e6e-9fb8-687fbd0549ac", 
+    "interpreter": 1, 
+    "key": "selectandconnectmsd", 
+    "name": "Select and Connect MSD", 
+    "osCredKey": "workerusernonprivileged", 
+    "serverKey": "workerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "a109e478-3854-40de-b892-547689b19975", 
+    "interpreter": 1, 
+    "key": "uploadimage", 
+    "name": "Upload Image", 
+    "osCredKey": "workerusernonprivileged", 
+    "serverKey": "workerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

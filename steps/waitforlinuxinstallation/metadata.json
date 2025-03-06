@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "432d1728-dd39-44a2-910b-5f89dc1c1103", 
+    "interpreter": 1, 
+    "key": "waitforlinuxinstallation", 
+    "name": "Wait for Linux Installation", 
+    "osCredKey": "workerusernonprivileged", 
+    "serverKey": "workerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
