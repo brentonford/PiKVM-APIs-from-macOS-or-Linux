@@ -1,7 +1,10 @@
 upload_file=$(curl -k -X POST -T "{workerBaseDirectory}/kickstart_{newLinuxNode.fqn}.iso" \
     "https://{pikvmIpAddress}/api/msd/write?image=kickstart_{newLinuxNode.fqn}.iso" \
     -H "X-KVMD-User: {pikvmUserAdmin.user}" \
-    -H "X-KVMD-Passwd: {pikvmUserAdmin.password}")
+    -H "X-KVMD-Passwd: {pikvmUserAdmin.password}" \
+    -H "Content-Type: application/octet-stream" \
+    --max-time 600 \
+    --tcp-nodelay)
 
 msd_state=$(curl -s -k -X GET \
     "https://{pikvmIpAddress}/api/msd" \
